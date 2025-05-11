@@ -11,222 +11,205 @@
     <style>
         body {
             margin: 0;
-            /* Нов фон за цялата страница - много тъмно сиво, почти черно */
-            background-color: #121212;
-            /* Използваме новия шрифт Poppins */
+            /* Основен фон от палитрата */
+            background-color: #181818;
             font-family: 'Poppins', sans-serif;
-            color: #e0e0e0; /* По-светъл, но не чисто бял цвят за основен текст */
+            color: #e6e6e6; /* Светъл цвят за основен текст на тъмен фон */
         }
         header {
-            /* По-тъмен фон за хедъра */
-            background-color: #1a1a1a;
-            padding: 30px 20px; /* Леко увеличено отстояние */
+            /* Фон от палитрата */
+            background-color: #181818;
+            padding: 30px 20px;
             text-align: center;
         }
         header img.logo2 {
-            max-width: 350px; /* Малко по-малко лого може би */
+            max-width: 350px;
             display: block;
-            margin: 0 auto 15px auto; /* Отстояние под логото */
+            margin: 0 auto 15px auto;
         }
         header p {
-            margin-top: 0; /* Вече има отстояние от логото */
-            font-size: 20px; /* Малко по-голям шрифт */
-            font-weight: 300; /* По-лек шрифт */
-            color: #b0b0b0; /* По-светъл сив цвят */
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: 300;
+            color: #e6e6e6; /* Светъл цвят */
         }
         nav {
-            background-color: #212121; /* По-тъмен фон за навигацията */
+            /* Фон от палитрата */
+            background-color: #4b4b4b;
             display: flex;
             justify-content: center;
-            padding: 15px 10px; /* Увеличено отстояние */
-             box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Лека сянка */
+            padding: 15px 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
         nav a {
-            color: #e0e0e0; /* Цвят на връзките */
+            color: #e6e6e6; /* Светъл цвят на връзките */
             text-decoration: none;
-            margin: 0 20px; /* Увеличено разстояние между връзките */
-            padding: 10px 15px; /* Увеличено отстояние във връзките */
-            border-radius: 5px; /* Леко заоблени ъгли */
+            margin: 0 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-            font-weight: 400; /* Нормален шрифт */
+            font-weight: 400;
         }
         nav a:hover {
-            background-color: #3a3a3a; /* По-светъл фон при ховър */
-            color: #ffc107; /* Златист акцентен цвят при ховър */
-            transform: translateY(-3px); /* Леко повдигане при ховър */
-             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background-color: #e6e6e6; /* Светъл фон при ховър */
+            color: #181818; /* Тъмен текст при ховър */
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
         section {
-            padding: 60px 20px; /* Увеличено отстояние в секциите */
+            padding: 60px 20px;
             text-align: center;
-            /* По-тъмен, но различен от хедъра фон за съдържанието */
-            background-color: #1a1a1a;
-            margin: 30px auto; /* Увеличено отстояние между секциите */
-            max-width: 1100px; /* Малко по-широки секции */
+            /* Фон от палитрата */
+            background-color: #4b4b4b;
+            margin: 30px auto;
+            max-width: 1100px;
             border-radius: 8px;
-             box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* По-изразена сянка на секциите */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-         #information { /* Секцията информация може да остане светла или да е малко по-светъл нюанс на тъмното */
-             /* background-color: #e6e6e6; */ /* Вариант за светъл фон */
-             background-color: #2a2a2a; /* Вариант за по-светъл тъмен фон */
-             color: #e0e0e0; /* Светъл цвят на текста */
-         }
-         #information h2,
-         #information h3 {
-             /* color: #323232; */ /* Стар цвят за светъл фон */
-             color: #ffc107; /* Златист акцентен цвят за заглавията в информация */
-         }
-         #information p {
-             /* color: #323232; */ /* Стар цвят за светъл фон */
-             color: #e0e0e0; /* Светъл цвят на параграфите */
-             text-align: left;
-             margin-bottom: 20px;
-             font-weight: 300; /* По-лек шрифт */
-         }
+         /* Секцията информация (модал) използва същите цветове за консистентност */
+         /* Ако искате светъл фон за информацията, променете background-color тук */
+         /* #information остава клас за модалите, които са извън flow-a */
 
 
         h2 {
-            color: #ffc107; /* Златист акцентен цвят за заглавията */
-            border-bottom: 2px solid #ffc107; /* Златиста граница */
+            color: #e6e6e6; /* Светъл цвят за заглавията */
+            border-bottom: 2px solid #e6e6e6; /* Граница в светъл цвят */
             display: inline-block;
-            margin-bottom: 30px; /* Увеличено отстояние */
-            font-weight: 600; /* По-изразен шрифт */
-            font-size: 30px; /* По-голям размер */
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 30px;
         }
-        #information h2 { /* Презаписване на стила за H2 в секция information */
-             color: #ffc107; /* Запазваме златистия цвят */
-             border-bottom-color: #4b4b4b; /* По-тъмна граница */
+        /* h2 в модалните прозорци */
+        .modal h3 {
+            color: #e6e6e6; /* Светъл цвят */
+            margin-top: 0;
+            border-bottom: 1px solid #181818; /* По-тъмна граница */
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 24px;
         }
-
 
         p {
             font-size: 18px;
-            color: #e0e0e0; /* Основен светъл цвят за параграфите */
-             line-height: 1.6; /* Увеличено разстояние между редовете за по-добра четливост */
+            color: #e6e6e6; /* Основен светъл цвят за параграфите */
+            line-height: 1.6;
         }
+         /* Параграфи в модалите */
+         .modal p {
+             color: #e6e6e6; /* Светъл цвят */
+             font-size: 16px;
+             margin-bottom: 15px;
+             line-height: 1.7;
+             font-weight: 300;
+         }
+
         /* Стилове за секцията с партньори (лога) */
         #partners ul {
             list-style: none;
             padding: 0;
-            margin-top: 30px; /* Увеличено отстояние */
+            margin-top: 30px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px; /* Увеличено разстояние между логата */
+            gap: 40px;
         }
         #partners li {
              display: flex;
              align-items: center;
              justify-content: center;
-             background-color: #2a2a2a; /* Леко по-светъл фон за елемента */
+             background-color: #181818; /* Най-тъмен фон за елемента */
              padding: 15px 20px;
              border-radius: 5px;
-             box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Лека сянка */
+             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
              transition: box-shadow 0.3s ease;
         }
          #partners li:hover {
-             box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* По-изразена сянка при ховър */
+             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
          }
         #partners a {
             display: block;
             text-decoration: none;
-            transition: transform 0.3s ease; /* Малко по-плавен преход */
+            transition: transform 0.3s ease;
             cursor: pointer;
         }
          #partners a:hover {
              transform: scale(1.1);
          }
         #partners img {
-            max-height: 70px; /* Малко по-големи лога */
+            max-height: 70px;
             width: auto;
             display: block;
-            filter: grayscale(80%); /* Намаляваме цветността на логата */
-            opacity: 0.8; /* Леко намалена прозрачност */
+            filter: grayscale(80%); /* Запазваме ефекта на обезцветяване */
+            opacity: 0.8;
             transition: filter 0.3s ease, opacity 0.3s ease;
         }
          #partners a:hover img {
-             filter: grayscale(0%); /* При ховър стават цветни */
-             opacity: 1; /* Пълна прозрачност */
+             filter: grayscale(0%);
+             opacity: 1;
          }
 
 
         /* ----- СТИЛОВЕ ЗА МОДАЛНИТЕ ПРОЗОРЦИ (ИНФОРМАЦИЯ) ----- */
         .modal-overlay {
             display: none;
+            opacity: 0; /* За анимация */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* По-тъмен фон */
+            background-color: rgba(0, 0, 0, 0.85); /* Почти черно наслагване */
             z-index: 1000;
-            backdrop-filter: blur(8px); /* По-изразено замъгляване */
-             transition: opacity 0.3s ease;
+            backdrop-filter: blur(8px);
+            transition: opacity 0.3s ease;
         }
-         .modal-overlay.visible { /* Клас, който ще се добавя с JS */
+         .modal-overlay.visible {
              opacity: 1;
          }
 
 
         .modal {
-            display: none; /* Скрит по подразъбиране */
-            opacity: 0; /* За анимация */
+            display: none;
+            opacity: 0;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #212121; /* Тъмен фон */
-            padding: 40px; /* Увеличено отстояние */
+            background-color: #4b4b4b; /* Фон от палитрата */
+            padding: 40px;
             border-radius: 8px;
-            max-width: 700px; /* Малко по-широк модал */
+            max-width: 700px;
             width: 90%;
-            max-height: 85%; /* Малко по-висок */
+            max-height: 85%;
             overflow-y: auto;
             z-index: 1001;
-            color: #e0e0e0;
+            color: #e6e6e6; /* Светъл текст */
             text-align: left;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* По-изразена сянка */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-         .modal.visible { /* Клас, който ще се добавя с JS */
+         .modal.visible {
              opacity: 1;
-             transform: translate(-50%, -50%) scale(1); /* Мащабиране при поява */
+             transform: translate(-50%, -50%) scale(1);
          }
 
-
-        .modal h3 {
-            color: #ffc107; /* Златист цвят */
-            margin-top: 0;
-            border-bottom: 1px solid #4a4a4a; /* По-тъмна граница */
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            text-align: center;
-             font-weight: 600;
-             font-size: 24px;
-        }
-
-        .modal p {
-            color: #e0e0e0;
-            font-size: 16px;
-            margin-bottom: 15px;
-             line-height: 1.7; /* Още малко разстояние между редовете */
-             font-weight: 300;
-        }
 
         /* Бутон за затваряне */
         .close-button {
             position: absolute;
-            top: 15px; /* Малко по-навътре */
-            right: 15px; /* Малко по-навътре */
-            font-size: 28px; /* По-голям бутон */
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
             font-weight: bold;
-            color: #e0e0e0; /* Светъл цвят */
+            color: #e6e6e6; /* Светъл цвят */
             cursor: pointer;
             transition: color 0.3s ease;
         }
 
         .close-button:hover {
-            color: #ffc107; /* Златист цвят при ховър */
+            color: #b0b0b0; /* Леко по-тъмно при ховър */
         }
         /* ----- КРАЙ НА СТИЛОВЕТЕ ЗА МОДАЛНИТЕ ПРОЗОРЦИ ----- */
 
@@ -234,36 +217,37 @@
         /* СТИЛОВЕ ЗА ПЛАВАЩИТЕ БУТОНИ ЗА КОНТАКТ */
         .contact-buttons {
             position: fixed;
-            bottom: 30px; /* По-далеч от ръба */
-            right: 30px; /* По-далеч от ръба */
+            bottom: 30px;
+            right: 30px;
             display: flex;
             flex-direction: column;
-            gap: 20px; /* По-голямо разстояние между бутоните */
+            gap: 20px;
             z-index: 999;
         }
 
         .contact-button {
             display: inline-block;
-            background-color: #ffc107; /* Златист фон за бутоните */
-            color: #121212; /* Тъмен текст */
-            padding: 14px 30px; /* По-големи бутони */
+            background-color: #e6e6e6; /* Светъл фон за бутоните */
+            color: #181818; /* Тъмен текст */
+            padding: 14px 30px;
             text-decoration: none;
-            border-radius: 30px; /* По-силно заоблени (като капсула) */
+            border-radius: 30px;
             font-size: 18px;
-            font-weight: 600; /* По-изразен текст */
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-             min-width: 200px; /* Малко по-широки бутони */
-             text-align: center;
-             box-shadow: 3px 3px 8px rgba(0,0,0,0.3); /* По-изразена сянка */
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
         }
 
         .contact-button:hover {
-            background-color: #ffa000; /* По-тъмен златист при ховър */
-            transform: translateY(-3px); /* Повдигане */
+            background-color: #b0b0b0; /* По-тъмно сиво при ховър */
+            color: #181818; /* Запазваме тъмния текст */
+            transform: translateY(-3px);
             box-shadow: 5px 5px 12px rgba(0,0,0,0.4);
         }
 
-         @media (max-width: 768px) { /* Адаптации за таблети и телефони */
+         @media (max-width: 768px) {
              section {
                  padding: 40px 15px;
                  margin: 20px auto;
@@ -339,11 +323,11 @@
     <p>Телефон: +359 876 667 472</p>
     <p>Имейл: mailissolutions@gmail.com</p>
     <p>Адрес: гр. София</p>
-
-    </section>
+</section>
 
 <footer>
     <p>&copy; 2025 Individual Security Solutions Ltd. Всички права запазени.</p>
+    
 </footer>
 
 <div class="modal-overlay"></div>
@@ -401,26 +385,22 @@
         const closeButtons = document.querySelectorAll('.close-button');
         const modals = document.querySelectorAll('.modal');
 
-        // Функция за показване на модал
         function showModal(modalElement) {
              modalOverlay.style.display = 'block';
-             // Малък таймаут, за да позволим на display:block да се приложи преди анимацията
              setTimeout(() => {
                 modalOverlay.classList.add('visible');
                 modalElement.style.display = 'block';
                 modalElement.classList.add('visible');
-             }, 10); /* Може да се наложи леко увеличение на таймаута */
+             }, 10);
         }
 
-        // Функция за скриване на модал
         function hideModal(modalElement) {
             modalOverlay.classList.remove('visible');
             modalElement.classList.remove('visible');
-            // Изчакваме края на анимацията преди да скрием елементите напълно
             setTimeout(() => {
                 modalOverlay.style.display = 'none';
                 modalElement.style.display = 'none';
-            }, 300); // Трябва да съвпада с продължителността на CSS transition
+            }, 300);
         }
 
 
