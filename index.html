@@ -4,164 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Individual Security Solutions</title>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #181818;
-            color: #e6e6e6;
-        }
-        header {
-            background-color: #323232;
-            padding: 20px;
-            text-align: center;
-        }
-        header img.logo2 {
-            max-width: 380px;
-            display: block;
-            margin: 0 auto;
-        }
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
-            color: #e6e6e6;
-        }
-        nav {
-            background-color: #4b4b4b;
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-        }
-        nav a {
-            color: #e6e6e6;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        nav a:hover {
-            background-color: #656565;
-            transform: scale(1.05);
-        }
-        section {
-            padding: 40px 20px;
-            text-align: center;
-            background-color: #4b4b4b;
-            margin: 20px auto;
-            max-width: 1000px;
-            border-radius: 8px;
-        }
-        h2 {
-            color: #e6e6e6;
-            border-bottom: 2px solid #656565;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 18px;
-            color: #e6e6e6;
-        }
-        .brand-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding-top: 20px;
-        }
-        .brand-item {
-            background-color: #323232;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            color: #e6e6e6;
-        }
-        .contact-buttons {
-            margin-top: 20px;
-        }
-        .contact-buttons a {
-            display: inline-block;
-            background-color: #656565;
-            color: white;
-            text-decoration: none;
-            padding: 12px 20px;
-            margin: 10px;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .contact-buttons a:hover {
-            background-color: #e6e6e6;
-            color: #181818;
-            transform: scale(1.05);
-        }
-        footer {
-            background-color: #323232;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        footer img.logo1 {
-            max-width: 120px;
-            margin-top: 10px;
-        }
-        footer p {
-            font-size: 14px;
-            color: #656565;
-        }
-    </style>
+    <title>Individual Security Solutions Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <header>
+        <img src="images/iss-circle-logo.png" alt="Individual Security Solutions" class="logo-center">
+    </header>
 
-<header>
-    <img src="logo2.png" class="logo2">
-    <p>Експертни решения за сигурност</p>
-</header>
+    <main>
+        <section class="services">
+            <h2>Услуги</h2>
+            <ul>
+                <li>Проектиране и изграждане на системи за видеонаблюдение</li>
+                <li>Контрол на достъпа и алармени системи</li>
+                <li>Абонаментна поддръжка на охранителни системи</li>
+            </ul>
+        </section>
 
-<nav>
-    <a href="#services">Услуги</a>
-    <a href="#about">За нас</a>
-    <a href="#contact">Контакти</a>
-</nav>
+        <section class="partners">
+            <h2>Партньорски марки</h2>
+            <div class="partner-grid">
 
-<section id="services">
-    <h2>Услуги</h2>
-    <p>Предлагаме иновативни решения в сферата на видеонаблюдение, контрол на достъпа и алармени системи.</p>
-</section>
+                <div class="brand" onclick="showPopup('dahua')">
+                    <img src="images/dahua.png" alt="Dahua Logo">
+                </div>
 
-<section id="about">
-    <h2>За нас</h2>
-    <p>Individual Security Solutions Ltd е българска компания, фокусирана върху предоставянето на висококачествени системи за сигурност.</p>
-</section>
 
-<section id="contact">
-    <h2>Контакти</h2>
-    <p>Телефон: +359 876 667 472</p>
-    <p>Имейл: office@individualsecurity.bg</p>
-    <p>Адрес: гр. София</p>
-    <div class="contact-buttons">
-        <a href="tel:+359876667472">Позвъни сега</a>
-        <a href="mailto:office@individualsecurity.bg">Пиши ни</a>
+                <div class="brand" onclick="showPopup('hikvision')">
+                    <img src="images/hikvision.png" alt="Hikvision Logo">
+                </div>
+
+
+                <div class="brand" onclick="showPopup('ajax')">
+                    <img src="images/ajax.png" alt="Ajax Logo">
+                </div>
+
+
+                <div class="brand" onclick="showPopup('paradox')">
+                    <img src="images/paradox.png" alt="Paradox Logo">
+                </div>
+
+
+                <div class="brand" onclick="showPopup('innerrange')">
+                    <img src="images/innerrange.png" alt="Innerrange Logo">
+                </div>
+
+
+                <div class="brand" onclick="showPopup('zkteco')">
+                    <img src="images/zkteco.png" alt="Zkteco Logo">
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contacts">
+            <h2>Контакти</h2>
+            <p>Телефон: <a href="tel:+359876667472">+359 876 667 472</a></p>
+            <p>Имейл: <a href="mailto:office@individualsecurity.bg">office@individualsecurity.bg</a></p>
+            <p>Адрес: гр. София</p>
+        </section>
+    </main>
+
+    <div id="floating-buttons">
+        <a href="tel:+359876667472" class="float-btn">Позвъни</a>
+        <a href="mailto:office@individualsecurity.bg" class="float-btn">Имейл</a>
     </div>
-</section>
 
-<section id="brands">
-    <h2>Партньорски марки</h2>
-    <div class="brand-container">
-        <div class="brand-item"><img src="brands/dahua.png" height="40"></div>
-        <div class="brand-item"><img src="brands/hikvision.png" height="40"></div>
-        <div class="brand-item"><img src="brands/paradox.png" height="40"></div>
-        <div class="brand-item"><img src="brands/ajax.png" height="40"></div>
-        <div class="brand-item"><img src="brands/innerrange.png" height="40"></div>
-        <div class="brand-item"><img src="brands/zkteco.png" height="40"></div>
+    <footer>
+        <p>&copy; 2025 Individual Security Solutions Ltd. Всички права запазени.</p>
+    </footer>
+
+    <!-- Popups -->
+
+    <div id="dahua-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('dahua')">&times;</span>
+            <h3>Dahua</h3>
+            <p>Информация за Dahua и техните продукти.</p>
+        </div>
     </div>
-</section>
 
-<footer>
-    <p>&copy; 2025 Individual Security Solutions Ltd. Всички права запазени.</p>
-    <img src="logo1.png" class="logo1">
-</footer>
+
+    <div id="hikvision-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('hikvision')">&times;</span>
+            <h3>Hikvision</h3>
+            <p>Информация за Hikvision и техните продукти.</p>
+        </div>
+    </div>
+
+
+    <div id="ajax-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('ajax')">&times;</span>
+            <h3>Ajax</h3>
+            <p>Информация за Ajax и техните продукти.</p>
+        </div>
+    </div>
+
+
+    <div id="paradox-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('paradox')">&times;</span>
+            <h3>Paradox</h3>
+            <p>Информация за Paradox и техните продукти.</p>
+        </div>
+    </div>
+
+
+    <div id="innerrange-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('innerrange')">&times;</span>
+            <h3>Innerrange</h3>
+            <p>Информация за Innerrange и техните продукти.</p>
+        </div>
+    </div>
+
+
+    <div id="zkteco-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('zkteco')">&times;</span>
+            <h3>Zkteco</h3>
+            <p>Информация за Zkteco и техните продукти.</p>
+        </div>
+    </div>
 
 </body>
 </html>
