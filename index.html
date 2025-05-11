@@ -53,32 +53,12 @@
             max-width: 1000px;
             border-radius: 8px;
         }
-        #information { /* Секцията информация ще има текст с друг цвят за четливост */
-             background-color: #e6e6e6;
-             color: #323232; /* Тъмносив текст за информацията */
-        }
-         #information h2,
-         #information h3 {
-             color: #323232; /* Тъмен цвят за заглавията в информация */
-         }
-         #information p {
-             color: #323232; /* Тъмен цвят за параграфите в информация */
-             text-align: left; /* Подравняване на текста вляво за по-лесно четене */
-             margin-bottom: 20px;
-         }
-
-
-        h2 {
+         h2 {
             color: #e6e6e6; /* Бял цвят за стандартните заглавия */
             border-bottom: 2px solid #656565;
             display: inline-block;
             margin-bottom: 20px;
         }
-        #information h2 { /* Презаписване на стила за H2 в секция information */
-             color: #323232;
-             border-bottom-color: #4b4b4b;
-        }
-
 
         p {
             font-size: 18px;
@@ -95,33 +75,93 @@
             gap: 30px; /* Увеличено разстояние между логата */
         }
         #partners li {
-            /* Не е нужен фон за li вече, логото ще е вътре */
+             /* Не е нужен фон за li вече */
+             display: flex; /* Важно за центриране на логата в li */
+             align-items: center;
+             justify-content: center;
         }
         #partners a {
-            display: block; /* За да може логото да поеме цялото място за клик */
-            text-decoration: none; /* Премахване на подчертаването на връзката */
+            display: block;
+            text-decoration: none;
             transition: transform 0.2s ease;
+            cursor: pointer; /* Показва, че е кликаем елемент */
         }
          #partners a:hover {
-             transform: scale(1.1); /* Лека анимация при ховър върху логото */
+             transform: scale(1.1);
          }
         #partners img {
-            max-height: 60px; /* Ограничение във височината на логата */
-            width: auto; /* Автоматично регулиране на ширината */
-            display: block; /* Важно за центриране и контрол на размера */
-             margin: 0 auto; /* Центриране на изображението в неговия контейнер */
+            max-height: 60px;
+            width: auto;
+            display: block;
+             margin: 0 auto;
         }
 
-        /* Стил за подзаглавията в секцията информация */
-        #information h3 {
-            text-align: center; /* Центриране на подзаглавията */
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #656565; /* Лека линия под подзаглавието */
-            padding-bottom: 5px;
-             display: inline-block; /* За да може границата да обхване само текста */
-             color: #4b4b4b;
+        /* ----- СТИЛОВЕ ЗА МОДАЛНИТЕ ПРОЗОРЦИ (ИНФОРМАЦИЯ) ----- */
+        /* Наслагване, което затъмнява фона */
+        .modal-overlay {
+            display: none; /* Скрито по подразбиране */
+            position: fixed; /* Фиксирана позиция спрямо екрана */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Черен полупрозрачен фон */
+            z-index: 1000; /* Да е над всичко останало */
+            backdrop-filter: blur(5px); /* Леко замъгляване на фона (по желание) */
         }
+
+        /* Контейнер на самия модал */
+        .modal {
+            display: none; /* Скрит по подразъбиране */
+            position: fixed; /* Фиксирана позиция */
+            top: 50%; /* Центриране по вертикала */
+            left: 50%; /* Центриране по хоризонтала */
+            transform: translate(-50%, -50%); /* Точно центриране */
+            background-color: #4b4b4b; /* Фон на модала (същия като секциите) */
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px; /* Максимална ширина на модала */
+            width: 90%; /* Ширина на малки екрани */
+            max-height: 80%; /* Максимална височина на модала */
+            overflow-y: auto; /* Добавя скрол, ако съдържанието е повече */
+            z-index: 1001; /* Да е над наслагването */
+            color: #e6e6e6; /* Цвят на текста в модала */
+             text-align: left; /* Подравняване на текста в модала вляво */
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Сянка за по-добър вид */
+        }
+
+        .modal h3 {
+            color: #e6e6e6; /* Цвят на заглавието в модала */
+            margin-top: 0;
+            border-bottom: 1px solid #656565;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center; /* Центриране на заглавието в модала */
+        }
+
+        .modal p {
+            color: #e6e6e6; /* Цвят на параграфите в модала */
+            font-size: 16px; /* Малко по-малък шрифт може би */
+             margin-bottom: 15px;
+        }
+
+        /* Бутон за затваряне */
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #e6e6e6;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #ffffff; /* По-светъл цвят при ховър */
+        }
+        /* ----- КРАЙ НА СТИЛОВЕТЕ ЗА МОДАЛНИТЕ ПРОЗОРЦИ ----- */
+
 
         /* НОВИ СТИЛОВЕ ЗА БУТОНИТЕ В КОНТАКТИ */
         #contact .contact-buttons {
@@ -187,53 +227,48 @@
 <section id="partners">
     <h2>Партньори</h2>
     <ul>
-        <li><a href="#information-dahua"><img src="images/dahua_logo.png" alt="Лого на Dahua"></a></li>
-        <li><a href="#information-hikvision"><img src="images/hikvision_logo.png" alt="Лого на Hikvision"></a></li>
-        <li><a href="#information-paradox"><img src="images/paradox_logo.png" alt="Лого на Paradox"></a></li>
-        <li><a href="#information-ajax"><img src="images/ajax_logo.png" alt="Лого на Ajax"></a></li>
-        <li><a href="#information-innerrange"><img src="images/inner_range_logo.png" alt="Лого на Inner Range"></a></li>
+        <li><a href="#modal-dahua"><img src="images/dahua_logo.png" alt="Лого на Dahua"></a></li>
+        <li><a href="#modal-hikvision"><img src="images/hikvision_logo.png" alt="Лого на Hikvision"></a></li>
+        <li><a href="#modal-paradox"><img src="images/paradox_logo.png" alt="Лого на Paradox"></a></li>
+        <li><a href="#modal-ajax"><img src="images/ajax_logo.png" alt="Лого на Ajax"></a></li>
+        <li><a href="#modal-innerrange"><img src="images/inner_range_logo.png" alt="Лого на Inner Range"></a></li>
     </ul>
 </section>
 
-<section id="information">
-    <h2>Информация за партньорите</h2>
-
-    <div id="information-dahua">
-        <h3>Dahua Technology</h3>
+<div class="modal-overlay"></div> <div id="modal-dahua" class="modal">
+        <span class="close-button">&times;</span> <h3>Dahua Technology</h3>
         <p>
             Dahua Technology е водещ световен доставчик на интелигентни решения за видеонаблюдение и IoT услуги. Компанията предлага широка гама от продукти, включително мрежови камери, рекордери (NVR/DVR), системи за видео анализ и контрол на достъпа, подходящи за различни приложения от малки домове до големи инфраструктурни проекти. Dahua се отличава с иновации в областта на изкуствения интелект и обработката на изображения.
         </p>
     </div>
 
-    <div id="information-hikvision">
-        <h3>Hikvision</h3>
+    <div id="modal-hikvision" class="modal">
+         <span class="close-button">&times;</span> <h3>Hikvision</h3>
         <p>
              Hikvision е друг основен играч на пазара за видеонаблюдение и решения за сигурност. Те предлагат цялостно портфолио от продукти, включващо камери, рекордери, системи за контрол на достъпа и алармени системи. Hikvision инвестира сериозно в научноизследователска и развойна дейност, фокусирайки се върху технологии като AI, машинно обучение и Cloud Computing за създаване на интелигентни и интегрирани решения.
         </p>
     </div>
 
-    <div id="information-paradox">
-        <h3>Paradox Security Systems</h3>
+    <div id="modal-paradox" class="modal">
+         <span class="close-button">&times;</span> <h3>Paradox Security Systems</h3>
         <p>
              Paradox е утвърден производител на алармени системи и решения за контрол на достъпа. Известни със своята надеждност и гъвкавост, системите на Paradox включват широка гама от контролни панели, датчици, клавиатури и комуникационни модули. Те са предпочитани за защита на жилищни, търговски и индустриални обекти, предлагайки както жични, така и безжични решения.
         </p>
     </div>
 
-    <div id="information-ajax">
-        <h3>Ajax Systems</h3>
+    <div id="modal-ajax" class="modal">
+         <span class="close-button">&times;</span> <h3>Ajax Systems</h3>
         <p>
              Ajax Systems се специализира в модерни безжични алармени системи, известни със своя стилен дизайн, лесен монтаж и интуитивно мобилно приложение. Системите на Ajax предлагат високо ниво на сигурност с криптирана комуникация и бързо известяване при инциденти. Продуктовата им гама включва различни видове датчици, контролни устройства и сирени, които могат лесно да бъдат интегрирани.
         </p>
     </div>
 
-    <div id="information-innerrange">
-        <h3>Inner Range</h3>
+    <div id="modal-innerrange" class="modal">
+         <span class="close-button">&times;</span> <h3>Inner Range</h3>
         <p>
              Inner Range е водещ разработчик и производител на интегрирани системи за сигурност, съчетаващи контрол на достъпа, алармени системи и автоматизация. Техните решения са известни с високата си надеждност, мащабируемост и възможност за централизирано управление на множество системи и обекти. Продуктите на Inner Range са подходящи за големи и сложни инсталации, изискващи високо ниво на сигурност и интеграция.
         </p>
     </div>
-
-</section>
 
 
 <section id="contact">
@@ -253,6 +288,77 @@
     <img src="logo1.png" class="logo1">
 </footer>
 
+<script>
+    // Изчакваме зареждането на цялата страница
+    document.addEventListener('DOMContentLoaded', function() {
+        // Взимаме всички връзки в секцията за партньори
+        const partnerLinks = document.querySelectorAll('#partners a');
+        // Взимаме наслагването
+        const modalOverlay = document.querySelector('.modal-overlay');
+        // Взимаме всички бутони за затваряне
+        const closeButtons = document.querySelectorAll('.close-button');
+        // Взимаме всички модални прозорци
+        const modals = document.querySelectorAll('.modal');
+
+        // Добавяме слушател за клик към всяка връзка за партньор
+        partnerLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Спираме стандартното превъртане към секция
+
+                // Взимаме ID-то на модала, което е в href атрибута (без #)
+                const targetModalId = this.getAttribute('href').substring(1);
+                const targetModal = document.getElementById(targetModalId);
+
+                if (targetModal) {
+                    // Показваме наслагването и целевия модал
+                    modalOverlay.style.display = 'block';
+                    targetModal.style.display = 'block';
+                     // Може да добавите класове за по-плавни CSS анимации (напр. targetModal.classList.add('visible');)
+                }
+            });
+        });
+
+        // Добавяме слушател за клик към всеки бутон за затваряне
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Намираме родителския модал на този бутон
+                const modalToClose = this.closest('.modal');
+                if (modalToClose) {
+                    // Скриваме модала и наслагването
+                    modalToClose.style.display = 'none';
+                    modalOverlay.style.display = 'none';
+                     // Може да премахнете класове за анимации (напр. modalToClose.classList.remove('visible');)
+                }
+            });
+        });
+
+         // Добавяме слушател за клик към наслагването за затваряне при клик извън модала
+         modalOverlay.addEventListener('click', function() {
+             // Скриваме наслагването
+             this.style.display = 'none';
+
+             // Скриваме всички активни модални прозорци
+             modals.forEach(modal => {
+                 modal.style.display = 'none';
+             });
+         });
+
+         // Добавяме слушател за натискане на ESC бутона за затваряне
+         document.addEventListener('keydown', function(event) {
+             if (event.key === 'Escape') {
+                  // Скриваме наслагването
+                  modalOverlay.style.display = 'none';
+
+                  // Скриваме всички активни модални прозорци
+                  modals.forEach(modal => {
+                      modal.style.display = 'none';
+                 });
+             }
+         });
+
+    });
+</script>
+
+
 </body>
 </html>
-
