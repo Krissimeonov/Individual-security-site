@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -54,16 +53,104 @@
             max-width: 1000px;
             border-radius: 8px;
         }
+        #information { /* Секцията информация ще има текст с друг цвят за четливост */
+             background-color: #e6e6e6;
+             color: #323232; /* Тъмносив текст за информацията */
+        }
+         #information h2,
+         #information h3 {
+             color: #323232; /* Тъмен цвят за заглавията в информация */
+         }
+         #information p {
+             color: #323232; /* Тъмен цвят за параграфите в информация */
+             text-align: left; /* Подравняване на текста вляво за по-лесно четене */
+             margin-bottom: 20px;
+         }
+
+
         h2 {
-            color: #e6e6e6;
+            color: #e6e6e6; /* Бял цвят за стандартните заглавия */
             border-bottom: 2px solid #656565;
             display: inline-block;
             margin-bottom: 20px;
         }
+        #information h2 { /* Презаписване на стила за H2 в секция information */
+             color: #323232;
+             border-bottom-color: #4b4b4b;
+        }
+
+
         p {
             font-size: 18px;
-            color: #e6e6e6;
+            color: #e6e6e6; /* Бял цвят за стандартните параграфи */
         }
+        /* Стилове за секцията с партньори (лога) */
+        #partners ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px; /* Увеличено разстояние между логата */
+        }
+        #partners li {
+            /* Не е нужен фон за li вече, логото ще е вътре */
+        }
+        #partners a {
+            display: block; /* За да може логото да поеме цялото място за клик */
+            text-decoration: none; /* Премахване на подчертаването на връзката */
+            transition: transform 0.2s ease;
+        }
+         #partners a:hover {
+             transform: scale(1.1); /* Лека анимация при ховър върху логото */
+         }
+        #partners img {
+            max-height: 60px; /* Ограничение във височината на логата */
+            width: auto; /* Автоматично регулиране на ширината */
+            display: block; /* Важно за центриране и контрол на размера */
+             margin: 0 auto; /* Центриране на изображението в неговия контейнер */
+        }
+
+        /* Стил за подзаглавията в секцията информация */
+        #information h3 {
+            text-align: center; /* Центриране на подзаглавията */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #656565; /* Лека линия под подзаглавието */
+            padding-bottom: 5px;
+             display: inline-block; /* За да може границата да обхване само текста */
+             color: #4b4b4b;
+        }
+
+        /* НОВИ СТИЛОВЕ ЗА БУТОНИТЕ В КОНТАКТИ */
+        #contact .contact-buttons {
+            margin-top: 30px; /* Разстояние над бутоните */
+            display: flex; /* Използваме flexbox за подреждане */
+            justify-content: center; /* Центриране на бутоните */
+            gap: 20px; /* Разстояние между бутоните */
+            flex-wrap: wrap; /* Позволява пренасяне на нов ред при малки екрани */
+        }
+
+        #contact .contact-button {
+            display: inline-block; /* Важно, за да може да се приложат padding и margin */
+            background-color: #656565; /* Фон на бутона */
+            color: #e6e6e6; /* Цвят на текста */
+            padding: 12px 25px; /* Вътрешно отстояние (пълнеж) */
+            text-decoration: none; /* Премахване на подчертаването */
+            border-radius: 5px; /* Заоблени ъгли */
+            font-size: 18px; /* Размер на шрифта */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Анимация */
+             min-width: 180px; /* Минимална ширина за бутоните */
+             text-align: center; /* Центриране на текста в бутона */
+        }
+
+        #contact .contact-button:hover {
+            background-color: #323232; /* Промяна на фона при ховър */
+            transform: scale(1.05); /* Лека анимация при ховър */
+        }
+
+
         footer {
             background-color: #181818;
             text-align: center;
@@ -87,7 +174,6 @@
     <p>Индивидуални решения за сигурност</p>
 </header>
 
-
 <section id="services">
     <h2>Услуги</h2>
     <p>Предлагаме иновативни решения в сферата на видеонаблюдение, контрол на достъпа и алармени системи.</p>
@@ -98,11 +184,73 @@
     <p>Individual Security Solutions Ltd е българска компания, фокусирана върху предоставянето на висококачествени системи за сигурност.</p>
 </section>
 
+<section id="partners">
+    <h2>Партньори</h2>
+    <ul>
+        <li><a href="#information-dahua"><img src="images/dahua_logo.png" alt="Лого на Dahua"></a></li>
+        <li><a href="#information-hikvision"><img src="images/hikvision_logo.png" alt="Лого на Hikvision"></a></li>
+        <li><a href="#information-paradox"><img src="images/paradox_logo.png" alt="Лого на Paradox"></a></li>
+        <li><a href="#information-ajax"><img src="images/ajax_logo.png" alt="Лого на Ajax"></a></li>
+        <li><a href="#information-innerrange"><img src="images/inner_range_logo.png" alt="Лого на Inner Range"></a></li>
+    </ul>
+</section>
+
+<section id="information">
+    <h2>Информация за партньорите</h2>
+
+    <div id="information-dahua">
+        <h3>Dahua Technology</h3>
+        <p>
+            Тук въведете подробна информация за Dahua: история, основни продукти (видеонаблюдение, NVR, камери), ключови предимства, области на приложение и всичко друго, което искате да споделите за тази марка.
+            Можете да добавите повече параграфи с текст при нужда.
+        </p>
+    </div>
+
+    <div id="information-hikvision">
+        <h3>Hikvision</h3>
+        <p>
+             Тук въведете подробна информация за Hikvision: история, основни продукти (видеонаблюдение, NVR, камери, контрол на достъп), ключови предимства, области на приложение и всичко друго, което искате да споделите за тази марка.
+             Можете да добавите повече параграфи с текст при нужда.
+        </p>
+    </div>
+
+    <div id="information-paradox">
+        <h3>Paradox Security Systems</h3>
+        <p>
+             Тук въведете подробна информация за Paradox: история, основни продукти (алармени системи, контролни панели, датчици), ключови предимства (надеждност, иновации), области на приложение и всичко друго, което искате да споделите за тази марка.
+             Можете да добавите повече параграфи с текст при нужда.
+        </p>
+    </div>
+
+    <div id="information-ajax">
+        <h3>Ajax Systems</h3>
+        <p>
+             Тук въведете подробна информация за Ajax: история, основни продукти (безжични алармени системи, датчици, умни устройства), ключови предимства (дизайн, лесен монтаж, мобилно приложение), области на приложение и всичко друго, което искате да споделите за тази марка.
+             Можете да добавите повече параграфи с текст при нужда.
+        </p>
+    </div>
+
+    <div id="information-innerrange">
+        <h3>Inner Range</h3>
+        <p>
+             Тук въведете подробна информация за Inner Range: история, основни продукти (интегрирани системи за сигурност, контрол на достъп, аларми), ключови предимства (мащабируемост, високо ниво на сигурност), области на приложение (големи обекти, индустрия) и всичко друго, което искате да споделите за тази марка.
+             Можете да добавите повече параграфи с текст при нужда.
+        </p>
+    </div>
+
+</section>
+
+
 <section id="contact">
     <h2>Контакти</h2>
     <p>Телефон: +359 876 667 472</p>
     <p>Имейл: mailissolutions@gmail.com</p>
     <p>Адрес: гр. София</p>
+
+    <div class="contact-buttons">
+        <a href="tel:+359876667472" class="contact-button">Обадете ни се</a>
+        <a href="mailto:mailissolutions@gmail.com" class="contact-button">Изпратете имейл</a>
+    </div>
 </section>
 
 <footer>
@@ -112,3 +260,4 @@
 
 </body>
 </html>
+
