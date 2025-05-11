@@ -75,8 +75,7 @@
             gap: 30px; /* Увеличено разстояние между логата */
         }
         #partners li {
-             /* Не е нужен фон за li вече */
-             display: flex; /* Важно за центриране на логата в li */
+             display: flex;
              align-items: center;
              justify-content: center;
         }
@@ -84,7 +83,7 @@
             display: block;
             text-decoration: none;
             transition: transform 0.2s ease;
-            cursor: pointer; /* Показва, че е кликаем елемент */
+            cursor: pointer;
         }
          #partners a:hover {
              transform: scale(1.1);
@@ -97,55 +96,52 @@
         }
 
         /* ----- СТИЛОВЕ ЗА МОДАЛНИТЕ ПРОЗОРЦИ (ИНФОРМАЦИЯ) ----- */
-        /* Наслагване, което затъмнява фона */
         .modal-overlay {
-            display: none; /* Скрито по подразбиране */
-            position: fixed; /* Фиксирана позиция спрямо екрана */
+            display: none;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Черен полупрозрачен фон */
-            z-index: 1000; /* Да е над всичко останало */
-            backdrop-filter: blur(5px); /* Леко замъгляване на фона (по желание) */
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
         }
 
-        /* Контейнер на самия модал */
         .modal {
-            display: none; /* Скрит по подразъбиране */
-            position: fixed; /* Фиксирана позиция */
-            top: 50%; /* Центриране по вертикала */
-            left: 50%; /* Центриране по хоризонтала */
-            transform: translate(-50%, -50%); /* Точно центриране */
-            background-color: #4b4b4b; /* Фон на модала (същия като секциите) */
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4b4b4b;
             padding: 30px;
             border-radius: 8px;
-            max-width: 600px; /* Максимална ширина на модала */
-            width: 90%; /* Ширина на малки екрани */
-            max-height: 80%; /* Максимална височина на модала */
-            overflow-y: auto; /* Добавя скрол, ако съдържанието е повече */
-            z-index: 1001; /* Да е над наслагването */
-            color: #e6e6e6; /* Цвят на текста в модала */
-             text-align: left; /* Подравняване на текста в модала вляво */
-             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Сянка за по-добър вид */
+            max-width: 600px;
+            width: 90%;
+            max-height: 80%;
+            overflow-y: auto;
+            z-index: 1001;
+            color: #e6e6e6;
+             text-align: left;
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .modal h3 {
-            color: #e6e6e6; /* Цвят на заглавието в модала */
+            color: #e6e6e6;
             margin-top: 0;
             border-bottom: 1px solid #656565;
             padding-bottom: 10px;
             margin-bottom: 20px;
-            text-align: center; /* Центриране на заглавието в модала */
+            text-align: center;
         }
 
         .modal p {
-            color: #e6e6e6; /* Цвят на параграфите в модала */
-            font-size: 16px; /* Малко по-малък шрифт може би */
+            color: #e6e6e6;
+            font-size: 16px;
              margin-bottom: 15px;
         }
 
-        /* Бутон за затваряне */
         .close-button {
             position: absolute;
             top: 10px;
@@ -158,37 +154,58 @@
         }
 
         .close-button:hover {
-            color: #ffffff; /* По-светъл цвят при ховър */
+            color: #ffffff;
         }
         /* ----- КРАЙ НА СТИЛОВЕТЕ ЗА МОДАЛНИТЕ ПРОЗОРЦИ ----- */
 
 
-        /* НОВИ СТИЛОВЕ ЗА БУТОНИТЕ В КОНТАКТИ */
-        #contact .contact-buttons {
-            margin-top: 30px; /* Разстояние над бутоните */
+        /* НОВИ СТИЛОВЕ ЗА ПЛАВАЩИТЕ БУТОНИ ЗА КОНТАКТ */
+        .contact-buttons {
+            position: fixed; /* Прави елемента фиксиран спрямо прозореца */
+            bottom: 20px; /* Разстояние от долния край */
+            right: 20px; /* Разстояние от десния край */
             display: flex; /* Използваме flexbox за подреждане */
-            justify-content: center; /* Центриране на бутоните */
-            gap: 20px; /* Разстояние между бутоните */
-            flex-wrap: wrap; /* Позволява пренасяне на нов ред при малки екрани */
+            flex-direction: column; /* Подрежда бутоните един под друг */
+            gap: 15px; /* Разстояние между бутоните */
+            z-index: 999; /* Осигурява, че бутоните ще са над повечето други елементи */
+             /* Може да добавите background-color или box-shadow за визия, ако желаете */
         }
 
-        #contact .contact-button {
-            display: inline-block; /* Важно, за да може да се приложат padding и margin */
-            background-color: #656565; /* Фон на бутона */
-            color: #e6e6e6; /* Цвят на текста */
-            padding: 12px 25px; /* Вътрешно отстояние (пълнеж) */
-            text-decoration: none; /* Премахване на подчертаването */
-            border-radius: 5px; /* Заоблени ъгли */
-            font-size: 18px; /* Размер на шрифта */
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Анимация */
-             min-width: 180px; /* Минимална ширина за бутоните */
-             text-align: center; /* Центриране на текста в бутона */
+        .contact-button {
+            display: inline-block;
+            background-color: #656565;
+            color: #e6e6e6;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+             min-width: 180px; /* Поддържа еднаква ширина */
+             text-align: center;
+             box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Лека сянка */
         }
 
-        #contact .contact-button:hover {
-            background-color: #323232; /* Промяна на фона при ховър */
-            transform: scale(1.05); /* Лека анимация при ховър */
+        .contact-button:hover {
+            background-color: #323232;
+            transform: scale(1.05);
         }
+
+        /* Адаптация за по-малки екрани - може да промените позицията или подредбата */
+         @media (max-width: 600px) {
+             .contact-buttons {
+                 bottom: 10px;
+                 right: 10px;
+                 /* flex-direction: row; /* Ако искате да са един до друг на малки екрани */
+                 /* width: 90%; */ /* Или някаква друга ширина */
+                 /* left: 5%; */
+                 /* transform: none; */
+             }
+              .contact-button {
+                  padding: 10px 20px; /* Малко по-малки бутони */
+                  font-size: 16px;
+                  min-width: unset; /* Премахване на минималната ширина, ако е нужно */
+              }
+         }
 
 
         footer {
@@ -211,7 +228,7 @@
 
 <header>
     <img src="logo2.png" class="logo2">
-    <p>Индивидуални решения за сигурност!</p>
+    <p>Индивидуални решения за сигурност</p>
 </header>
 
 <section id="services">
@@ -235,36 +252,43 @@
     </ul>
 </section>
 
-<div class="modal-overlay"></div> <div id="modal-dahua" class="modal">
-        <span class="close-button">&times;</span> <h3>Dahua Technology</h3>
+<div class="modal-overlay"></div>
+
+<div id="modal-dahua" class="modal">
+        <span class="close-button">&times;</span>
+        <h3>Dahua Technology</h3>
         <p>
             Dahua Technology е водещ световен доставчик на интелигентни решения за видеонаблюдение и IoT услуги. Компанията предлага широка гама от продукти, включително мрежови камери, рекордери (NVR/DVR), системи за видео анализ и контрол на достъпа, подходящи за различни приложения от малки домове до големи инфраструктурни проекти. Dahua се отличава с иновации в областта на изкуствения интелект и обработката на изображения.
         </p>
     </div>
 
     <div id="modal-hikvision" class="modal">
-         <span class="close-button">&times;</span> <h3>Hikvision</h3>
+         <span class="close-button">&times;</span>
+        <h3>Hikvision</h3>
         <p>
              Hikvision е друг основен играч на пазара за видеонаблюдение и решения за сигурност. Те предлагат цялостно портфолио от продукти, включващо камери, рекордери, системи за контрол на достъпа и алармени системи. Hikvision инвестира сериозно в научноизследователска и развойна дейност, фокусирайки се върху технологии като AI, машинно обучение и Cloud Computing за създаване на интелигентни и интегрирани решения.
         </p>
     </div>
 
     <div id="modal-paradox" class="modal">
-         <span class="close-button">&times;</span> <h3>Paradox Security Systems</h3>
+         <span class="close-button">&times;</span>
+        <h3>Paradox Security Systems</h3>
         <p>
              Paradox е утвърден производител на алармени системи и решения за контрол на достъпа. Известни със своята надеждност и гъвкавост, системите на Paradox включват широка гама от контролни панели, датчици, клавиатури и комуникационни модули. Те са предпочитани за защита на жилищни, търговски и индустриални обекти, предлагайки както жични, така и безжични решения.
         </p>
     </div>
 
     <div id="modal-ajax" class="modal">
-         <span class="close-button">&times;</span> <h3>Ajax Systems</h3>
+         <span class="close-button">&times;</span>
+        <h3>Ajax Systems</h3>
         <p>
              Ajax Systems се специализира в модерни безжични алармени системи, известни със своя стилен дизайн, лесен монтаж и интуитивно мобилно приложение. Системите на Ajax предлагат високо ниво на сигурност с криптирана комуникация и бързо известяване при инциденти. Продуктовата им гама включва различни видове датчици, контролни устройства и сирени, които могат лесно да бъдат интегрирани.
         </p>
     </div>
 
     <div id="modal-innerrange" class="modal">
-         <span class="close-button">&times;</span> <h3>Inner Range</h3>
+         <span class="close-button">&times;</span>
+        <h3>Inner Range</h3>
         <p>
              Inner Range е водещ разработчик и производител на интегрирани системи за сигурност, съчетаващи контрол на достъпа, алармени системи и автоматизация. Техните решения са известни с високата си надеждност, мащабируемост и възможност за централизирано управление на множество системи и обекти. Продуктите на Inner Range са подходящи за големи и сложни инсталации, изискващи високо ниво на сигурност и интеграция.
         </p>
@@ -277,79 +301,60 @@
     <p>Имейл: mailissolutions@gmail.com</p>
     <p>Адрес: гр. София</p>
 
-    <div class="contact-buttons">
-        <a href="tel:+359876667472" class="contact-button">Обадете ни се</a>
-        <a href="mailto:mailissolutions@gmail.com" class="contact-button">Изпратете имейл</a>
-    </div>
-</section>
+    </section>
 
 <footer>
     <p>&copy; 2025 Individual Security Solutions Ltd. Всички права запазени.</p>
     <img src="logo1.png" class="logo1">
 </footer>
 
-<script>
-    // Изчакваме зареждането на цялата страница
-    document.addEventListener('DOMContentLoaded', function() {
-        // Взимаме всички връзки в секцията за партньори
-        const partnerLinks = document.querySelectorAll('#partners a');
-        // Взимаме наслагването
-        const modalOverlay = document.querySelector('.modal-overlay');
-        // Взимаме всички бутони за затваряне
-        const closeButtons = document.querySelectorAll('.close-button');
-        // Взимаме всички модални прозорци
-        const modals = document.querySelectorAll('.modal');
+<div class="contact-buttons">
+    <a href="tel:+359876667472" class="contact-button">Обадете ни се</a>
+    <a href="mailto:mailissolutions@gmail.com" class="contact-button">Изпратете имейл</a>
+</div>
 
-        // Добавяме слушател за клик към всяка връзка за партньор
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const partnerLinks = document.querySelectorAll('#partners a');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const closeButtons = document.querySelectorAll('.close-button');
+        const modals = document.querySelectorAll('.modal'); // Взимаме всички елементи с клас 'modal'
+
         partnerLinks.forEach(link => {
             link.addEventListener('click', function(event) {
-                event.preventDefault(); // Спираме стандартното превъртане към секция
+                event.preventDefault();
 
-                // Взимаме ID-то на модала, което е в href атрибута (без #)
                 const targetModalId = this.getAttribute('href').substring(1);
                 const targetModal = document.getElementById(targetModalId);
 
                 if (targetModal) {
-                    // Показваме наслагването и целевия модал
                     modalOverlay.style.display = 'block';
                     targetModal.style.display = 'block';
-                     // Може да добавите класове за по-плавни CSS анимации (напр. targetModal.classList.add('visible');)
                 }
             });
         });
 
-        // Добавяме слушател за клик към всеки бутон за затваряне
         closeButtons.forEach(button => {
             button.addEventListener('click', function() {
-                // Намираме родителския модал на този бутон
                 const modalToClose = this.closest('.modal');
                 if (modalToClose) {
-                    // Скриваме модала и наслагването
                     modalToClose.style.display = 'none';
                     modalOverlay.style.display = 'none';
-                     // Може да премахнете класове за анимации (напр. modalToClose.classList.remove('visible');)
                 }
             });
         });
 
-         // Добавяме слушател за клик към наслагването за затваряне при клик извън модала
          modalOverlay.addEventListener('click', function() {
-             // Скриваме наслагването
              this.style.display = 'none';
-
-             // Скриваме всички активни модални прозорци
              modals.forEach(modal => {
                  modal.style.display = 'none';
              });
          });
 
-         // Добавяме слушател за натискане на ESC бутона за затваряне
          document.addEventListener('keydown', function(event) {
              if (event.key === 'Escape') {
-                  // Скриваме наслагването
                   modalOverlay.style.display = 'none';
-
-                  // Скриваме всички активни модални прозорци
                   modals.forEach(modal => {
                       modal.style.display = 'none';
                  });
