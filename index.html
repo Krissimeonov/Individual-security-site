@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -5,297 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Individual Security Solutions</title>
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            /* Основен фон от палитрата */
+            font-family: Arial, sans-serif;
             background-color: #181818;
-            font-family: 'Poppins', sans-serif;
-            color: #e6e6e6; /* Светъл цвят за основен текст на тъмен фон */
+            color: #e6e6e6;
         }
         header {
-            /* Фон от палитрата */
-            background-color: #181818;
-            padding: 30px 20px;
+            background-color: #323232;
+            padding: 20px;
             text-align: center;
         }
         header img.logo2 {
-            max-width: 350px;
+            max-width: 380px;
             display: block;
-            margin: 0 auto 15px auto;
+            margin: 0 auto;
         }
         header p {
-            margin-top: 0;
-            font-size: 20px;
-            font-weight: 300;
-            color: #e6e6e6; /* Светъл цвят */
+            margin-top: 10px;
+            font-size: 18px;
+            color: #e6e6e6;
         }
         nav {
-            /* Фон от палитрата */
             background-color: #4b4b4b;
             display: flex;
             justify-content: center;
-            padding: 15px 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            padding: 10px;
         }
         nav a {
-            color: #e6e6e6; /* Светъл цвят на връзките */
+            color: #e6e6e6;
             text-decoration: none;
-            margin: 0 20px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-            font-weight: 400;
+            margin: 0 15px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         nav a:hover {
-            background-color: #e6e6e6; /* Светъл фон при ховър */
-            color: #181818; /* Тъмен текст при ховър */
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background-color: #656565;
+            transform: scale(1.05);
         }
         section {
-            padding: 60px 20px;
+            padding: 40px 20px;
             text-align: center;
-            /* Фон от палитрата */
             background-color: #4b4b4b;
-            margin: 30px auto;
-            max-width: 1100px;
+            margin: 20px auto;
+            max-width: 1000px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-         /* Секцията информация (модал) използва същите цветове за консистентност */
-         /* Ако искате светъл фон за информацията, променете background-color тук */
-         /* #information остава клас за модалите, които са извън flow-a */
-
-
         h2 {
-            color: #e6e6e6; /* Светъл цвят за заглавията */
-            border-bottom: 2px solid #e6e6e6; /* Граница в светъл цвят */
+            color: #e6e6e6;
+            border-bottom: 2px solid #656565;
             display: inline-block;
-            margin-bottom: 30px;
-            font-weight: 600;
-            font-size: 30px;
+            margin-bottom: 20px;
         }
-        /* h2 в модалните прозорци */
-        .modal h3 {
-            color: #e6e6e6; /* Светъл цвят */
-            margin-top: 0;
-            border-bottom: 1px solid #181818; /* По-тъмна граница */
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 24px;
-        }
-
         p {
             font-size: 18px;
-            color: #e6e6e6; /* Основен светъл цвят за параграфите */
-            line-height: 1.6;
+            color: #e6e6e6;
         }
-         /* Параграфи в модалите */
-         .modal p {
-             color: #e6e6e6; /* Светъл цвят */
-             font-size: 16px;
-             margin-bottom: 15px;
-             line-height: 1.7;
-             font-weight: 300;
-         }
-
-        /* Стилове за секцията с партньори (лога) */
-        #partners ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 30px;
+        .brand-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
-        }
-        #partners li {
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             background-color: #181818; /* Най-тъмен фон за елемента */
-             padding: 15px 20px;
-             border-radius: 5px;
-             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-             transition: box-shadow 0.3s ease;
-        }
-         #partners li:hover {
-             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-         }
-        #partners a {
-            display: block;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-         #partners a:hover {
-             transform: scale(1.1);
-         }
-        #partners img {
-            max-height: 70px;
-            width: auto;
-            display: block;
-            filter: grayscale(80%); /* Запазваме ефекта на обезцветяване */
-            opacity: 0.8;
-            transition: filter 0.3s ease, opacity 0.3s ease;
-        }
-         #partners a:hover img {
-             filter: grayscale(0%);
-             opacity: 1;
-         }
-
-
-        /* ----- СТИЛОВЕ ЗА МОДАЛНИТЕ ПРОЗОРЦИ (ИНФОРМАЦИЯ) ----- */
-        .modal-overlay {
-            display: none;
-            opacity: 0; /* За анимация */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Почти черно наслагване */
-            z-index: 1000;
-            backdrop-filter: blur(8px);
-            transition: opacity 0.3s ease;
-        }
-         .modal-overlay.visible {
-             opacity: 1;
-         }
-
-
-        .modal {
-            display: none;
-            opacity: 0;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #4b4b4b; /* Фон от палитрата */
-            padding: 40px;
-            border-radius: 8px;
-            max-width: 700px;
-            width: 90%;
-            max-height: 85%;
-            overflow-y: auto;
-            z-index: 1001;
-            color: #e6e6e6; /* Светъл текст */
-            text-align: left;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-         .modal.visible {
-             opacity: 1;
-             transform: translate(-50%, -50%) scale(1);
-         }
-
-
-        /* Бутон за затваряне */
-        .close-button {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #e6e6e6; /* Светъл цвят */
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .close-button:hover {
-            color: #b0b0b0; /* Леко по-тъмно при ховър */
-        }
-        /* ----- КРАЙ НА СТИЛОВЕТЕ ЗА МОДАЛНИТЕ ПРОЗОРЦИ ----- */
-
-
-        /* СТИЛОВЕ ЗА ПЛАВАЩИТЕ БУТОНИ ЗА КОНТАКТ */
-        .contact-buttons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
             gap: 20px;
-            z-index: 999;
+            padding-top: 20px;
         }
-
-        .contact-button {
+        .brand-item {
+            background-color: #323232;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #e6e6e6;
+        }
+        .contact-buttons {
+            margin-top: 20px;
+        }
+        .contact-buttons a {
             display: inline-block;
-            background-color: #e6e6e6; /* Светъл фон за бутоните */
-            color: #181818; /* Тъмен текст */
-            padding: 14px 30px;
+            background-color: #656565;
+            color: white;
             text-decoration: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
-            min-width: 200px;
+            padding: 12px 20px;
+            margin: 10px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .contact-buttons a:hover {
+            background-color: #e6e6e6;
+            color: #181818;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #323232;
             text-align: center;
-            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+            padding: 20px;
+            margin-top: 40px;
         }
-
-        .contact-button:hover {
-            background-color: #b0b0b0; /* По-тъмно сиво при ховър */
-            color: #181818; /* Запазваме тъмния текст */
-            transform: translateY(-3px);
-            box-shadow: 5px 5px 12px rgba(0,0,0,0.4);
+        footer img.logo1 {
+            max-width: 120px;
+            margin-top: 10px;
         }
-
-         @media (max-width: 768px) {
-             section {
-                 padding: 40px 15px;
-                 margin: 20px auto;
-             }
-             h2 {
-                 font-size: 26px;
-                 margin-bottom: 20px;
-             }
-             #partners ul {
-                 gap: 20px;
-             }
-             #partners img {
-                 max-height: 50px;
-             }
-             .contact-buttons {
-                 bottom: 20px;
-                 right: 20px;
-                 gap: 10px;
-             }
-              .contact-button {
-                  padding: 12px 25px;
-                  font-size: 16px;
-                  min-width: 160px;
-              }
-              .modal {
-                  padding: 25px;
-              }
-              .modal h3 {
-                  font-size: 20px;
-              }
-              .modal p {
-                  font-size: 15px;
-              }
-              .close-button {
-                  font-size: 20px;
-                  top: 10px;
-                  right: 10px;
-              }
-         }
-
+        footer p {
+            font-size: 14px;
+            color: #656565;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <img src="logo2.png" class="logo2">
-    <p>Индивидуални решения за сигурност</p>
+    <p>Експертни решения за сигурност</p>
 </header>
+
+<nav>
+    <a href="#services">Услуги</a>
+    <a href="#about">За нас</a>
+    <a href="#contact">Контакти</a>
+</nav>
 
 <section id="services">
     <h2>Услуги</h2>
@@ -307,146 +135,33 @@
     <p>Individual Security Solutions Ltd е българска компания, фокусирана върху предоставянето на висококачествени системи за сигурност.</p>
 </section>
 
-<section id="partners">
-    <h2>Партньори</h2>
-    <ul>
-        <li><a href="#modal-dahua"><img src="images/dahua_logo.png" alt="Лого на Dahua"></a></li>
-        <li><a href="#modal-hikvision"><img src="images/hikvision_logo.png" alt="Лого на Hikvision"></a></li>
-        <li><a href="#modal-paradox"><img src="images/paradox_logo.png" alt="Лого на Paradox"></a></li>
-        <li><a href="#modal-ajax"><img src="images/ajax_logo.png" alt="Лого на Ajax"></a></li>
-        <li><a href="#modal-innerrange"><img src="images/inner_range_logo.png" alt="Лого на Inner Range"></a></li>
-    </ul>
-</section>
-
 <section id="contact">
     <h2>Контакти</h2>
     <p>Телефон: +359 876 667 472</p>
-    <p>Имейл: mailissolutions@gmail.com</p>
-    <p>гр.София</p>
+    <p>Имейл: office@individualsecurity.bg</p>
+    <p>Адрес: гр. София</p>
+    <div class="contact-buttons">
+        <a href="tel:+359876667472">Позвъни сега</a>
+        <a href="mailto:office@individualsecurity.bg">Пиши ни</a>
+    </div>
+</section>
+
+<section id="brands">
+    <h2>Партньорски марки</h2>
+    <div class="brand-container">
+        <div class="brand-item"><img src="brands/dahua.png" height="40"></div>
+        <div class="brand-item"><img src="brands/hikvision.png" height="40"></div>
+        <div class="brand-item"><img src="brands/paradox.png" height="40"></div>
+        <div class="brand-item"><img src="brands/ajax.png" height="40"></div>
+        <div class="brand-item"><img src="brands/innerrange.png" height="40"></div>
+        <div class="brand-item"><img src="brands/zkteco.png" height="40"></div>
+    </div>
 </section>
 
 <footer>
     <p>&copy; 2025 Individual Security Solutions Ltd. Всички права запазени.</p>
-    
+    <img src="logo1.png" class="logo1">
 </footer>
-
-<div class="modal-overlay"></div>
-
-<div id="modal-dahua" class="modal">
-        <span class="close-button">&times;</span>
-        <h3>Dahua Technology</h3>
-        <p>
-            Dahua Technology е водещ световен доставчик на интелигентни решения за видеонаблюдение и IoT услуги. Компанията предлага широка гама от продукти, включително мрежови камери, рекордери (NVR/DVR), системи за видео анализ и контрол на достъпа, подходящи за различни приложения от малки домове до големи инфраструктурни проекти. Dahua се отличава с иновации в областта на изкуствения интелект и обработката на изображения.
-        </p>
-    </div>
-
-    <div id="modal-hikvision" class="modal">
-         <span class="close-button">&times;</span>
-        <h3>Hikvision</h3>
-        <p>
-             Hikvision е друг основен играч на пазара за видеонаблюдение и решения за сигурност. Те предлагат цялостно портфолио от продукти, включващо камери, рекордери, системи за контрол на достъпа и алармени системи. Hikvision инвестира сериозно в научноизследователска и развойна дейност, фокусирайки се върху технологии като AI, машинно обучение и Cloud Computing за създаване на интелигентни и интегрирани решения.
-        </p>
-    </div>
-
-    <div id="modal-paradox" class="modal">
-         <span class="close-button">&times;</span>
-        <h3>Paradox Security Systems</h3>
-        <p>
-             Paradox е утвърден производител на алармени системи и решения за контрол на достъпа. Известни със своята надеждност и гъвкавост, системите на Paradox включват широка гама от контролни панели, датчици, клавиатури и комуникационни модули. Те са предпочитани за защита на жилищни, търговски и индустриални обекти, предлагайки както жични, така и безжични решения.
-        </p>
-    </div>
-
-    <div id="modal-ajax" class="modal">
-         <span class="close-button">&times;</span>
-        <h3>Ajax Systems</h3>
-        <p>
-             Ajax Systems се специализира в модерни безжични алармени системи, известни със своя стилен дизайн, лесен монтаж и интуитивно мобилно приложение. Системите на Ajax предлагат високо ниво на сигурност с криптирана комуникация и бързо известяване при инциденти. Продуктовата им гама включва различни видове датчици, контролни устройства и сирени, които могат лесно да бъдат интегрирани.
-        </p>
-    </div>
-
-    <div id="modal-innerrange" class="modal">
-         <span class="close-button">&times;</span>
-        <h3>Inner Range</h3>
-        <p>
-             Inner Range е водещ разработчик и производител на интегрирани системи за сигурност, съчетаващи контрол на достъпа, алармени системи и автоматизация. Техните решения са известни с високата си надеждност, мащабируемост и възможност за централизирано управление на множество системи и обекти. Продуктите на Inner Range са подходящи за големи и сложни инсталации, изискващи високо ниво на сигурност и интеграция.
-        </p>
-    </div>
-
-<div class="contact-buttons">
-    <a href="tel:+359876667472" class="contact-button">Обадете ни се</a>
-    <a href="mailto:mailissolutions@gmail.com" class="contact-button">Изпратете имейл</a>
-</div>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const partnerLinks = document.querySelectorAll('#partners a');
-        const modalOverlay = document.querySelector('.modal-overlay');
-        const closeButtons = document.querySelectorAll('.close-button');
-        const modals = document.querySelectorAll('.modal');
-
-        function showModal(modalElement) {
-             modalOverlay.style.display = 'block';
-             setTimeout(() => {
-                modalOverlay.classList.add('visible');
-                modalElement.style.display = 'block';
-                modalElement.classList.add('visible');
-             }, 10);
-        }
-
-        function hideModal(modalElement) {
-            modalOverlay.classList.remove('visible');
-            modalElement.classList.remove('visible');
-            setTimeout(() => {
-                modalOverlay.style.display = 'none';
-                modalElement.style.display = 'none';
-            }, 300);
-        }
-
-
-        partnerLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                const targetModalId = this.getAttribute('href').substring(1);
-                const targetModal = document.getElementById(targetModalId);
-
-                if (targetModal) {
-                    showModal(targetModal);
-                }
-            });
-        });
-
-        closeButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const modalToClose = this.closest('.modal');
-                if (modalToClose) {
-                    hideModal(modalToClose);
-                }
-            });
-        });
-
-         modalOverlay.addEventListener('click', function() {
-             modals.forEach(modal => {
-                 if (modal.classList.contains('visible')) {
-                    hideModal(modal);
-                 }
-             });
-         });
-
-         document.addEventListener('keydown', function(event) {
-             if (event.key === 'Escape') {
-                  modals.forEach(modal => {
-                     if (modal.classList.contains('visible')) {
-                       hideModal(modal);
-                     }
-                 });
-             }
-         });
-
-    });
-</script>
-
 
 </body>
 </html>
