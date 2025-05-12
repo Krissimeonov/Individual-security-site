@@ -30,7 +30,7 @@ header {
 }
 
 .logo-center {
-    max-width: 450px; /* Регулирайте според размера на вашето лого */
+    max-width: 400px; /* Регулирайте според размера на вашето лого */
     height: auto;
     display: block;
     margin: 0 auto;
