@@ -248,7 +248,7 @@ footer {
 }
 
 .contact-button {
-    padding: 10px 20px;
+    padding: 8px 18px;
     background-color: #007bff;
     color: white;
     text-decoration: none;
@@ -259,7 +259,7 @@ footer {
 }
 
 .contact-button:hover {
-    background-color: #0056b3;
+    background-color: #b30000;
 }
 /* Скрий бутоните по подразбиране */
 .floating-buttons {
