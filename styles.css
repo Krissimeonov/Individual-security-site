@@ -332,3 +332,28 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Добавяме плавна анимация за самия попъп фон */
+.popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Показване на попъпа */
+.popup.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Анимация на вътрешното съдържание */
+.popup-content {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Когато е активен попъпа */
+.popup.visible .popup-content {
+    transform: scale(1);
+    opacity: 1;
+}
