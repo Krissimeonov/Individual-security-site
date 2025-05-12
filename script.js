@@ -1,3 +1,4 @@
+// Function to show a specific popup by its ID
 function showPopup(popupId) {
     const popup = document.getElementById(popupId + '-popup');
     if (popup) {
@@ -14,6 +15,7 @@ function showPopup(popupId) {
     }
 }
 
+// Function to close a specific popup by its ID
 function closePopup(popupId) {
     const popup = document.getElementById(popupId + '-popup');
     if (popup) {
@@ -24,6 +26,7 @@ function closePopup(popupId) {
     }
 }
 
+// Optional: Close popup when pressing the Escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         const openPopups = document.querySelectorAll('.popup.visible');
@@ -34,8 +37,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-    }
-    // Скриване и показване на плаващите бутони при скрол
+// Скриване и показване на плаващите бутони при скрол
 let lastScrollTop = 0;
 const floatingButtons = document.getElementById('floatingButtons');
 
@@ -54,10 +56,3 @@ window.addEventListener('scroll', function() {
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
-
-});
-
-// Note: The HTML uses inline onclick attributes (e.g., onclick="showPopup('dahua')").
-// This script provides the functions that those onclick attributes call.
-// For larger projects, it's better practice to remove inline onclick and
-// use addEventListener in the script.js file instead.
