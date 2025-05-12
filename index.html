@@ -1,240 +1,115 @@
-/* CSS променливи за цветове */
-:root {
-    --dark-bg: #333;
-    --section-bg-1: #444;
-    --section-bg-2: #555;
-    --text-color: #ddd;
-    --link-color: #aaa;
-    --link-hover-color: #fff;
-    --button-bg: #666;
-    --button-hover-bg: #777;
-    --button-text: #fff;
-    --footer-bg: #222;
-    --popup-overlay: rgba(0, 0, 0, 0.7);
-    --popup-bg: #fff;
-    --popup-text: #333;
-}
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Security Solutions Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/iss-circle-logo.png" alt="Individual Security Solutions" class="logo-center">
+    </header>
 
-body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-}
+    <main>
+        <section class="services">
+            <h2>Услуги</h2>
+            <p>Предлагаме иновативни решения в сферата на видеонаблюдение, контрол на достъпа и алармени системи.</p>
+            <ul>
+                <li>Проектиране и изграждане на системи за видеонаблюдение</li>
+                <li>Контрол на достъпа и алармени системи</li>
+                <li>Абонаментна поддръжка на охранителни системи</li>
+            </ul>
+        </section>
 
-header {
-    text-align: center;
-    padding: 20px 0;
-    background-color: var(--dark-bg);
-}
+        <section class="about-us">
+            <h2>За нас</h2>
+            <p>Individual Security Solutions Ltd е българска компания с дългогодишен опит в проектирането, изграждането и поддръжката на висококачествени охранителни системи. Нашият екип притежава задълбочени компетенции и експертиза в сферата на видеонаблюдението, контрола на достъпа и алармените системи, осигурявайки надеждни и иновативни решения за сигурност.</p>
+        </section>
 
-.logo-center {
-    max-width: 150px; /* Регулирайте според размера на вашето лого */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
+        <section class="partners">
+            <h2>Партньорски марки</h2>
+            <div class="partner-grid">
+                <div class="brand" onclick="showPopup('dahua')">
+                    <img src="images/dahua.png" alt="Dahua Logo">
+                </div>
+                <div class="brand" onclick="showPopup('hikvision')">
+                    <img src="images/hikvision.png" alt="Hikvision Logo">
+                </div>
+                <div class="brand" onclick="showPopup('ajax')">
+                    <img src="images/ajax.png" alt="Ajax Logo">
+                </div>
+                <div class="brand" onclick="showPopup('paradox')">
+                    <img src="images/paradox.png" alt="Paradox Logo">
+                </div>
+                <div class="brand" onclick="showPopup('innerrange')">
+                    <img src="images/innerrange.png" alt="Innerrange Logo">
+                </div>
+                <div class="brand" onclick="showPopup('zkteco')">
+                    <img src="images/zkteco.png" alt="Zkteco Logo">
+                </div>
+            </div>
+        </section>
 
-main {
-    padding: 0; /* Премахваме глобален padding, секциите ще имат свой */
-}
+        <section class="contacts">
+            <h2>Контакти</h2>
+            <p>Телефон: <a href="tel:+359876667472">+359 876 667 472</a></p>
+            <p>Имейл: <a href="mailto:mailissolutions@gmail.com">mailissolutions@gmail.com</a></p>
+            <p>Адрес: гр. София</p>
+            <div class="contact-buttons">
+                 <a href="tel:+359876667472" class="contact-button">Обадете ни се</a>
+                 <a href="mailto:mailissolutions@gmail.com" class="contact-button">Изпратете имейл</a>
+            </div>
+        </section>
+    </main>
 
-section {
-    padding: 40px 20px; /* Добавяме padding за секциите */
-    text-align: center; /* Центрираме съдържанието в секциите */
-    margin-bottom: 10px; /* Малка разделителна линия между секциите */
-}
+    <footer>
+        <p>&copy; 2025 Individual Security Solutions Ltd. Всички права запазени.</p>
+    </footer>
 
-/* Редуващи се фонове за секциите */
-.services { background-color: var(--section-bg-1); }
-.about-us { background-color: var(--section-bg-2); }
-.partners { background-color: var(--section-bg-1); }
-.contacts { background-color: var(--section-bg-2); }
+    <div id="dahua-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('dahua')">&times;</span>
+            <h3>Dahua</h3>
+            <p>Информация за Dahua и техните продукти.</p>
+        </div>
+    </div>
+    <div id="hikvision-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('hikvision')">&times;</span>
+            <h3>Hikvision</h3>
+            <p>Информация за Hikvision и техните продукти.</p>
+        </div>
+    </div>
+    <div id="ajax-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('ajax')">&times;</span>
+            <h3>Ajax</h3>
+            <p>Информация за Ajax и техните продукти.</p>
+        </div>
+    </div>
+    <div id="paradox-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('paradox')">&times;</span>
+            <h3>Paradox</h3>
+            <p>Информация за Paradox и техните продукти.</p>
+        </div>
+    </div>
+    <div id="innerrange-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('innerrange')">&times;</span>
+            <h3>Innerrange</h3>
+            <p>Информация за Innerrange и техните продукти.</p>
+        </div>
+    </div>
+    <div id="zkteco-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('zkteco')">&times;</span>
+            <h3>Zkteco</h3>
+            <p>Информация за Zkteco и техните продукти.</p>
+        </div>
+    </div>
 
-
-h2 {
-    color: var(--text-color);
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-/* Стилизиране на списъка с услуги */
-.services ul {
-    list-style: none;
-    padding: 0;
-    max-width: 600px; /* Ограничаваме ширината на списъка за по-добра четливост */
-    margin: 20px auto;
-    text-align: left; /* Връщаме подравняването на списъка наляво */
-}
-
-.services li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.services li::before {
-    content: "•"; /* Може да се замени с иконка ако желаете */
-    color: var(--link-color); /* Цвят на "куршума" */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-    position: absolute;
-    left: 0;
-}
-
-
-/* Стилизиране на мрежата с партньори */
-.partner-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 или повече колони в зависимост от ширината */
-    gap: 20px; /* Разстояние между логата */
-    max-width: 700px; /* Ограничаваме ширината на мрежата */
-    margin: 20px auto; /* Центрираме мрежата */
-}
-
-.brand {
-    background-color: var(--dark-bg); /* Фон за всяко лого */
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: flex; /* За центриране на логото вътре */
-    justify-content: center;
-    align-items: center;
-    min-height: 80px; /* Минимална височина за кутийката на логото */
-}
-
-.brand:hover {
-    background-color: var(--section-bg-2);
-}
-
-.brand img {
-    max-width: 100%; /* Гарантира, че изображението няма да надвишава ширината на контейнера */
-    max-height: 60px; /* Ограничава височината на логата */
-    display: block;
-    margin: 0 auto; /* Центрира изображението */
-}
-
-
-/* Стилизиране на секция "Контакти" */
-.contacts a {
-    color: var(--link-color);
-    text-decoration: none;
-}
-
-.contacts a:hover {
-    text-decoration: underline;
-    color: var(--link-hover-color);
-}
-
-.contacts p {
-    margin: 10px 0;
-}
-
-.contact-buttons {
-    margin-top: 30px;
-    display: flex; /* Подрежда бутоните хоризонтално */
-    flex-direction: column; /* По подразбиране са един под друг */
-    gap: 15px; /* Разстояние между бутоните */
-    max-width: 250px; /* Ограничаваме ширината на контейнера с бутоните */
-    margin: 30px auto 0 auto; /* Центрираме контейнера */
-}
-
-.contact-button {
-    display: block; /* Правят се блокови елементи, за да заемат пълната ширина */
-    padding: 12px 25px;
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    text-decoration: none; /* Премахваме подчертаването при линкове */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-    text-align: center;
-}
-
-.contact-button:hover {
-    background-color: var(--button-hover-bg);
-}
-
-/* Стилизиране на Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--footer-bg);
-    color: var(--text-color);
-    font-size: 0.9em;
-}
-
-/* Стилизиране на Popups */
-.popup {
-    display: none; /* Скрити по подразбиране */
-    position: fixed; /* Фиксирана позиция спрямо екрана */
-    z-index: 100; /* Да е над другите елементи */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Добавя скрол, ако съдържанието е по-голямо */
-    background-color: var(--popup-overlay); /* Полупрозрачен черен фон */
-    backdrop-filter: blur(5px); /* Добавя леко размазване на фона */
-    -webkit-backdrop-filter: blur(5px); /* За Safari */
-}
-
-.popup-content {
-    background-color: var(--popup-bg);
-    margin: 15% auto; /* Центрира попапа вертикално и хоризонтално */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%; /* Ширина на попапа */
-    max-width: 500px; /* Максимална ширина */
-    border-radius: 10px;
-    position: relative; /* За позициониране на бутона за затваряне */
-    color: var(--popup-text); /* Цвят на текста в попапа */
-    text-align: left; /* Връщаме подравняването наляво за съдържанието на попапа */
-}
-
-.popup-content h3 {
-    color: var(--popup-text);
-    margin-top: 0;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Медия заявки за адаптивност */
-@media (min-width: 600px) {
-    .partner-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Повече колони на по-голям екран */
-        max-width: 900px;
-    }
-     .contact-buttons {
-        flex-direction: row; /* Подрежда бутоните един до друг на по-голям екран */
-        justify-content: center; /* Центрира бутоните в реда */
-        max-width: 400px; /* Увеличаваме малко ширината */
-     }
-}
-
-@media (min-width: 768px) {
-     .partner-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-     }
-}
-
+</body>
+</html>
