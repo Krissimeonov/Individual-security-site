@@ -237,15 +237,24 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
      }
 }
-.floating-buttons {
+..floating-buttons {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
-    display: flex;
+    transform: translate(-50%, 0);
+    display: none;
     gap: 15px;
     z-index: 1000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+/* Покажи бутоните само на мобилни устройства */
+@media (max-width: 768px) {
+    .floating-buttons {
+        display: flex;
+    }
+}
+
 
 .contact-button {
     padding: 8px 18px;
