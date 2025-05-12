@@ -4,7 +4,10 @@ function showPopup(popupId) {
     if (popup) {
         popup.style.display = 'block';
         // Optional: Add event listener to close when clicking outside the popup content
+        // This listener is added each time the popup is shown, which is okay for this example
+        // but in larger apps, you might manage listeners differently.
         popup.addEventListener('click', function(event) {
+            // Check if the click was directly on the background (the popup div itself), not its content
             if (event.target === popup) {
                 closePopup(popupId);
             }
@@ -38,4 +41,3 @@ document.addEventListener('keydown', function(event) {
 // This script provides the functions that those onclick attributes call.
 // For larger projects, it's better practice to remove inline onclick and
 // use addEventListener in the script.js file instead.
-// JavaScript will be added later
