@@ -357,3 +357,13 @@ footer {
     transform: scale(1);
     opacity: 1;
 }
+.popup {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popup.visible {
+  display: block;
+  opacity: 1;
+}
