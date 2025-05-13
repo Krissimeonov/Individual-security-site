@@ -258,6 +258,35 @@ footer {
    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Дефинира как изглеждат плаващите бутони, когато са скрити */
+.floating-buttons.hidden {
+    transform: translateY(100px); /* Измества ги надолу */
+    opacity: 0; /* Прави ги напълно прозрачни */
+    pointer-events: none; /* Позволява клик през тях, когато са скрити */
+}
+
+/* Увери се, че базовите стилове на .floating-buttons включват transition */
+.floating-buttons {
+   position: fixed;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%); /* Центрира бутоните */
+   display: none; /* Скрити по подразбиране чрез CSS */
+   gap: 15px;
+   z-index: 1000;
+   /* ВАЖНО: Запази или добави тези преходи тук */
+   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Медия заявката за показване на мобилни остава същата */
+@media (max-width: 768px) {
+    .floating-buttons {
+        display: flex; /* Показва ги на мобилни */
+        /* Може би е добра идея тук да се скрият първоначално, ако страницата не е в началото */
+        /* Например, ако скрол позицията > 0 при зареждане, добави класа .hidden */
+    }
+    /* ... останалите стилове за мобилни бутони ... */
+}
 
 /* Медия заявки за адаптивност */
 
