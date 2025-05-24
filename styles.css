@@ -1,38 +1,44 @@
 :root {
-    --dark-bg: #333;
-    --section-bg-1: #444;
-    --section-bg-2: #555;
-    --text-color: #ddd;
-    --link-color: #aaa;
-    --link-hover-color: #fff;
-    --button-bg: #666;
-    --button-hover-bg: #777;
+    --primary-bg: #f5f7fa;         /* Светъл фон */
+    --section-bg-1: #e2edfa;       /* Светлосиня секция */
+    --section-bg-2: #ffffff;       /* Бяла секция */
+    --accent-main: #005cb9;        /* Тъмносин за акцент и бутони */
+    --accent-alt: #00c48c;         /* Зелен акцент */
+    --text-main: #1b2631;          /* Тъмносив текст */
+    --text-2nd: #34506b;           /* Вторичен синкав текст */
+    --link-color: #005cb9;         /* Син за линкове */
+    --link-hover: #00c48c;         /* Зелен при hover */
+    --button-bg: #005cb9;
+    --button-hover: #003c7e;
     --button-text: #fff;
-    --footer-bg: #222;
-    --popup-overlay: rgba(0, 0, 0, 0.7);
+    --footer-bg: #e2edfa;
+    --popup-overlay: rgba(27, 38, 49, 0.8);
     --popup-bg: #fff;
-    --popup-text: #333;
+    --popup-text: #1b2631;
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
     margin: 0;
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    line-height: 1.6;
+    background-color: var(--primary-bg);
+    color: var(--text-main);
+    line-height: 1.7;
 }
 
 header {
     text-align: center;
-    padding: 20px 0;
-    background-color: var(--dark-bg);
+    padding: 32px 0 20px 0;
+    background: linear-gradient(90deg, var(--accent-main) 20%, var(--accent-alt) 100%);
 }
-
 .logo-center {
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
     display: block;
     margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 8px 0;
+    box-shadow: 0 4px 12px rgba(0,92,185,.07);
 }
 
 main {
@@ -45,15 +51,17 @@ section {
     margin-bottom: 10px;
 }
 
-.services { background-color: var(--section-bg-1); }
-.about-us { background-color: var(--section-bg-2); }
-.partners { background-color: var(--section-bg-1); }
-.contacts { background-color: var(--section-bg-2); }
+.services   { background: var(--section-bg-1); }
+.about-us   { background: var(--section-bg-2); }
+.partners   { background: var(--section-bg-1); }
+.contacts   { background: var(--section-bg-2); }
 
 h2 {
-    color: var(--text-color);
+    color: var(--accent-main);
     margin-top: 0;
     margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .services ul {
@@ -63,46 +71,45 @@ h2 {
     margin: 20px auto;
     text-align: left;
 }
-
 .services li {
-    margin-bottom: 10px;
-    padding-left: 20px;
+    margin-bottom: 12px;
+    padding-left: 22px;
     position: relative;
+    color: var(--text-2nd);
 }
-
 .services li::before {
-    content: "•";
-    color: var(--link-color);
+    content: "✔";
+    color: var(--accent-alt);
     font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
     position: absolute;
     left: 0;
+    top: 0;
 }
 
-/* Партньорска grid мрежа */
 .partner-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
+    gap: 22px;
     max-width: 700px;
     margin: 20px auto;
 }
 
 .brand {
-    background-color: var(--dark-bg);
-    padding: 15px;
-    border-radius: 8px;
+    background: #fff;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,92,185,.06);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: box-shadow 0.2s, border 0.2s;
+    border: 2px solid transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80px;
 }
 .brand:hover {
-    background-color: var(--section-bg-2);
+    border: 2px solid var(--accent-alt);
+    box-shadow: 0 6px 18px rgba(0,196,140,.09);
 }
 .brand img {
     max-width: 100%;
@@ -114,59 +121,60 @@ h2 {
 /* Контакти */
 .contacts a {
     color: var(--link-color);
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 .contacts a:hover {
-    text-decoration: underline;
-    color: var(--link-hover-color);
+    color: var(--link-hover);
 }
 .contacts p {
     margin: 10px 0;
 }
-
-/* Карта */
 .map-container {
     margin: 20px auto;
     max-width: 400px;
-    border-radius: 10px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,92,185,.08);
 }
 
-/* Бутони за контакт */
+/* Бутони */
 .contact-buttons, .floating-buttons {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    max-width: 250px;
+    gap: 16px;
+    max-width: 260px;
     margin-left: auto;
     margin-right: auto;
 }
 .contact-button {
     display: block;
-    padding: 12px 25px;
-    background-color: var(--button-bg);
+    padding: 14px 28px;
+    background: var(--button-bg);
     color: var(--button-text);
     text-decoration: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 7px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    font-size: 1.05em;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,92,185,.07);
+    transition: background 0.2s;
     text-align: center;
 }
 .contact-button:hover {
-    background-color: var(--button-hover-bg);
+    background: var(--button-hover);
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: var(--footer-bg);
-    color: var(--text-color);
-    font-size: 0.9em;
+    background: var(--footer-bg);
+    color: var(--text-2nd);
+    font-size: 0.98em;
 }
 
 /* Popup прозорци */
@@ -176,14 +184,10 @@ footer {
     pointer-events: none;
     position: fixed;
     z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
     overflow: auto;
-    background-color: var(--popup-overlay);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: var(--popup-overlay);
     transition: opacity 0.3s ease;
 }
 .popup.visible {
@@ -192,27 +196,29 @@ footer {
     pointer-events: auto;
 }
 .popup-content {
-    background-color: var(--popup-bg);
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 10px;
+    background: var(--popup-bg);
+    margin: 10% auto;
+    padding: 28px 20px 22px 20px;
+    border: 1px solid #d9e6f6;
+    width: 92%;
+    max-width: 480px;
+    border-radius: 16px;
     position: relative;
     color: var(--popup-text);
+    box-shadow: 0 4px 16px rgba(0,92,185,.09);
     text-align: left;
-    transform: scale(0.9);
+    transform: scale(0.97);
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s, opacity 0.3s;
 }
 .popup.visible .popup-content {
     transform: scale(1);
     opacity: 1;
 }
 .popup-content h3 {
-    color: var(--popup-text);
+    color: var(--accent-main);
     margin-top: 0;
+    font-weight: 700;
 }
 .close {
     color: #aaa;
@@ -220,91 +226,53 @@ footer {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.2s;
     background: none;
     border: none;
 }
-.close:hover, .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+.close:hover, .close:focus { color: var(--accent-main); }
 
 /* Плаващи бутони */
 .floating-buttons {
     position: fixed;
-    bottom: 20px;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     display: none;
-    gap: 15px;
+    gap: 16px;
     z-index: 1000;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s, opacity 0.3s;
 }
 .floating-buttons.hidden {
-    transform: translateY(100px);
+    transform: translateY(110px);
     opacity: 0;
     pointer-events: none;
 }
 
 /* Мобилна адаптация */
 @media (max-width: 768px) {
-    .floating-buttons {
-        display: flex;
-    }
+    .floating-buttons { display: flex; }
     .floating-buttons .contact-button {
-        padding: 8px 18px;
-        background-color: #b30000;
-        color: white;
+        padding: 10px 14px;
+        background: var(--accent-main);
+        color: #fff;
         border-radius: 30px;
         font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px rgba(0,92,185,.14);
     }
-    .floating-buttons .contact-button:hover {
-        background-color: #1bb300;
-    }
-    body {
-        padding: 0 10px;
-        font-size: 16px;
-    }
-    header img.logo-center {
-        width: 80%;
-        max-width: 300px;
-    }
-    .partner-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    .contact-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    .contact-buttons .contact-button {
-        width: 90%;
-        margin: 10px 0;
-        font-size: 1.1em;
-        padding: 1em;
-    }
-    section {
-        margin-bottom: 2em;
-        padding: 30px 15px;
-    }
-    footer {
-        font-size: 0.9em;
-        padding: 1em;
-    }
+    .floating-buttons .contact-button:hover { background: var(--accent-alt); }
+    body { padding: 0 6px; font-size: 16px; }
+    header img.logo-center { width: 88%; max-width: 220px; }
+    .partner-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .contact-buttons { flex-direction: column; align-items: center; }
+    .contact-buttons .contact-button { width: 98%; margin: 10px 0; font-size: 1.09em; padding: 1em; }
+    section { margin-bottom: 1.3em; padding: 28px 9px; }
+    footer { font-size: 0.93em; padding: 1em; }
 }
+
 @media (max-width: 480px) {
-    .partner-grid {
-        grid-template-columns: 1fr;
-    }
-    body {
-        padding: 0 5px;
-    }
-    section {
-        padding: 20px 10px;
-    }
-    .floating-buttons {
-        gap: 10px;
-    }
+    .partner-grid { grid-template-columns: 1fr; }
+    body { padding: 0 2px; }
+    section { padding: 16px 4px; }
+    .floating-buttons { gap: 10px; }
 }
