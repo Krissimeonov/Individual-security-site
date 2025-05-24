@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Security Solutions Ltd</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="logo2.png" alt="Individual Security Solutions" class="logo-center">
+    </header>
+
+    <main>
+        <section class="services">
+            <h2>Услуги</h2>
+            <p>Предлагаме иновативни решения в сферата на видеонаблюдение, контрол на достъпа и алармени системи.</p>
+            <ul>
+                <li>Проектиране и изграждане на системи за видеонаблюдение</li>
+                <li>Алармени системи (СОТ)</li>
+                <li>Контрол на достъпа и работно време</li>
+                <li>Абонаментна поддръжка на охранителни системи</li>
+            </ul>
+        </section>
+
+        <section class="about-us">
+            <h2>За нас</h2>
+            <p>Individual Security Solutions Ltd е българска компания с дългогодишен опит в проектирането, изграждането и поддръжката на висококачествени охранителни системи. Нашият екип притежава задълбочени познания и компетенции в сферата на видеонаблюдението, контрола на достъпа и алармените системи, осигурявайки надеждни и иновативни решения за сигурност.</p>
+        </section>
+
+        <section class="partners">
+            <h2>Партньорски марки</h2>
+            <div class="partner-grid">
+                <div class="brand" onclick="showPopup('dahua')">
+                    <img src="dahua.png" alt="Dahua Logo">
+                </div>
+                <div class="brand" onclick="showPopup('hikvision')">
+                    <img src="hikvision.png" alt="Hikvision Logo">
+                </div>
+                <div class="brand" onclick="showPopup('ajax')">
+                    <img src="ajax.png" alt="Ajax Logo">
+                </div>
+                <div class="brand" onclick="showPopup('paradox')">
+                    <img src="paradox.png" alt="Paradox Logo">
+                </div>
+                <div class="brand" onclick="showPopup('innerrange')">
+                    <img src="innerrange.png" alt="Innerrange Logo">
+                </div>
+                <div class="brand" onclick="showPopup('zkteco')">
+                    <img src="zkteco.png" alt="Zkteco Logo">
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts">
+            <h2>Контакти</h2>
+            <p>Телефон: <a href="tel:+359876667472">+359 876 667 472</a></p>
+            <p>Имейл: <a href="mailto:mailissolutions@gmail.com">mailissolutions@gmail.com</a></p>
+            <p>гр.София</p>
+        </section>
+    </main>
+
+    <!-- Плаващи бутони -->
+    <div class="floating-buttons" id="floatingButtons">
+        <a href="tel:+359876667472" class="contact-button">📞 Обадете ни се</a>
+        <a href="mailto:mailissolutions@gmail.com" class="contact-button">✉️ Изпратете имейл</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Individual Security Solutions Ltd. Всички права запазени.</p>
+    </footer>
+
+    <!-- Popup прозорци -->
+    <div id="dahua-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('dahua')">&times;</span>
+            <h3>Dahua</h3>
+            <p>Dahua Technology е водещ световен доставчик на интелигентни решения за видеонаблюдение и IoT услуги...</p>
+        </div>
+    </div>
+
+    <div id="hikvision-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('hikvision')">&times;</span>
+            <h3>Hikvision</h3>
+            <p>Hikvision е основен играч на пазара за видеонаблюдение и решения за сигурност...</p>
+        </div>
+    </div>
+
+    <div id="ajax-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('ajax')">&times;</span>
+            <h3>Ajax</h3>
+            <p>Ajax Systems се специализира в модерни безжични алармени системи...</p>
+        </div>
+    </div>
+
+    <div id="paradox-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('paradox')">&times;</span>
+            <h3>Paradox</h3>
+            <p>Paradox е утвърден производител на алармени системи и решения за контрол на достъпа...</p>
+        </div>
+    </div>
+
+    <div id="innerrange-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('innerrange')">&times;</span>
+            <h3>Innerrange</h3>
+            <p>Inner Range е водещ разработчик на интегрирани системи за сигурност...</p>
+        </div>
+    </div>
+
+    <div id="zkteco-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('zkteco')">&times;</span>
+            <h3>Zkteco</h3>
+            <p>ZKTeco е водещ доставчик на решения за биометрична верификация и сигурност...</p>
+        </div>
+    </div>
+
+</body>
+</html>

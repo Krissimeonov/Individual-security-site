@@ -1,0 +1,395 @@
+/* CSS променливи за цветове */
+:root {
+    --dark-bg: #333;
+    --section-bg-1: #444;
+    --section-bg-2: #555;
+    --text-color: #ddd;
+    --link-color: #aaa;
+    --link-hover-color: #fff;
+    --button-bg: #666;
+    --button-hover-bg: #777;
+    --button-text: #fff;
+    --footer-bg: #222;
+    --popup-overlay: rgba(0, 0, 0, 0.7);
+    --popup-bg: #fff;
+    --popup-text: #333;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--dark-bg);
+}
+
+.logo-center {
+    max-width: 400px; /* Регулирайте според размера на вашето лого */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+main {
+    padding: 0; /* Премахваме глобален padding, секциите ще имат свой */
+}
+
+section {
+    padding: 40px 20px; /* Добавяме padding за секциите */
+    text-align: center; /* Центрираме съдържанието в секциите */
+    margin-bottom: 10px; /* Малка разделителна линия между секциите */
+}
+
+/* Редуващи се фонове за секциите */
+.services { background-color: var(--section-bg-1); }
+.about-us { background-color: var(--section-bg-2); }
+.partners { background-color: var(--section-bg-1); }
+.contacts { background-color: var(--section-bg-2); }
+
+h2 {
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Стилизиране на списъка с услуги */
+.services ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px; /* Ограничаваме ширината на списъка за по-добра четливост */
+    margin: 20px auto;
+    text-align: left; /* Връщаме подравняването на списъка наляво */
+}
+
+.services li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.services li::before {
+    content: "•"; /* Може да се замени с иконка ако желаете */
+    color: var(--link-color); /* Цвят на "куршума" */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+
+/* Стилизиране на мрежата с партньори */
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 или повече колони в зависимост от ширината */
+    gap: 20px; /* Разстояние между логата */
+    max-width: 700px; /* Ограничаваме ширината на мрежата */
+    margin: 20px auto; /* Центрираме мрежата */
+}
+
+.brand {
+    background-color: var(--dark-bg); /* Фон за всяко лого */
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex; /* За центриране на логото вътре */
+    justify-content: center;
+    align-items: center;
+    min-height: 80px; /* Минимална височина за кутийката на логото */
+}
+
+.brand:hover {
+    background-color: var(--section-bg-2);
+}
+
+.brand img {
+    max-width: 100%; /* Гарантира, че изображението няма да надвишава ширината на контейнера */
+    max-height: 60px; /* Ограничава височината на логата */
+    display: block;
+    margin: 0 auto; /* Центрира изображението */
+}
+
+/* Стилизиране на секция "Контакти" */
+.contacts a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color);
+}
+
+.contacts p {
+    margin: 10px 0;
+}
+
+/* Контейнер за бутоните в секция "Контакти" */
+.contact-buttons {
+    margin-top: 30px;
+    display: flex; /* Подрежда бутоните */
+    flex-direction: column; /* По подразбиране са един под друг */
+    gap: 15px; /* Разстояние между бутоните */
+    max-width: 250px; /* Ограничаваме ширината на контейнера с бутоните */
+    margin: 30px auto 0 auto; /* Центрираме контейнера */
+}
+
+/* Общи стилове за бутон за контакт (използвани в секция контакти) */
+.contact-button {
+    display: block; /* Правят се блокови елементи, за да заемат пълната ширина */
+    padding: 12px 25px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none; /* Премахваме подчертаването при линкове */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.contact-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Стилизиране на Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--footer-bg);
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+/* Стилизиране на Popups */
+.popup {
+    /* Скрити по подразбиране */
+    display: none;
+    opacity: 0;
+    pointer-events: none; /* Не позволява взаимодействие, когато е скрит */
+
+    /* Позициониране */
+    position: fixed; /* Фиксирана позиция спрямо екрана */
+    z-index: 100; /* Да е над другите елементи */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Добавя скрол, ако съдържанието е по-голямо */
+
+    /* Фон и ефекти */
+    background-color: var(--popup-overlay); /* Полупрозрачен черен фон */
+    backdrop-filter: blur(5px); /* Добавя леко размазване на фона */
+    -webkit-backdrop-filter: blur(5px); /* За Safari */
+
+    /* Анимация */
+    transition: opacity 0.3s ease;
+}
+
+/* Показване на попъпа */
+.popup.visible {
+    display: block; /* Променя display, за да стане видим */
+    opacity: 1;
+    pointer-events: auto; /* Позволява взаимодействие */
+}
+
+.popup-content {
+    background-color: var(--popup-bg);
+    margin: 15% auto; /* Центрира попапа вертикално и хоризонтално */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Ширина на попапа */
+    max-width: 500px; /* Максимална ширина */
+    border-radius: 10px;
+    position: relative; /* За позициониране на бутона за затваряне */
+    color: var(--popup-text); /* Цвят на текста в попапа */
+    text-align: left; /* Връщаме подравняването наляво за съдържанието на попапа */
+
+    /* Анимация */
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Анимация когато попъпът е активен */
+.popup.visible .popup-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.popup-content h3 {
+    color: var(--popup-text);
+    margin-top: 0;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Плаващи бутони (скрити по подразбиране) */
+.floating-buttons {
+   position: fixed;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%); /* Центрира бутоните */
+   display: none; /* Скрити по подразбиране */
+   gap: 15px;
+   z-index: 1000;
+   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Дефинира как изглеждат плаващите бутони, когато са скрити */
+.floating-buttons.hidden {
+    transform: translateY(100px); /* Измества ги надолу */
+    opacity: 0; /* Прави ги напълно прозрачни */
+    pointer-events: none; /* Позволява клик през тях, когато са скрити */
+}
+
+/* Увери се, че базовите стилове на .floating-buttons включват transition */
+.floating-buttons {
+   position: fixed;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%); /* Центрира бутоните */
+   display: none; /* Скрити по подразбиране чрез CSS */
+   gap: 15px;
+   z-index: 1000;
+   /* ВАЖНО: Запази или добави тези преходи тук */
+   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Медия заявката за показване на мобилни остава същата */
+@media (max-width: 768px) {
+    .floating-buttons {
+        display: flex; /* Показва ги на мобилни */
+        /* Може би е добра идея тук да се скрият първоначално, ако страницата не е в началото */
+        /* Например, ако скрол позицията > 0 при зареждане, добави класа .hidden */
+    }
+    /* ... останалите стилове за мобилни бутони ... */
+}
+
+/* Медия заявки за адаптивност */
+
+/* Адаптации за по-големи екрани (над 600px) */
+@media (min-width: 600px) {
+    .partner-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Повече колони на по-голям екран */
+        max-width: 900px;
+    }
+     /* Подрежда бутоните за контакти един до друг */
+     .contact-buttons {
+        flex-direction: row;
+        justify-content: center; /* Центрира бутоните в реда */
+        max-width: 400px; /* Увеличаваме малко ширината */
+     }
+}
+
+/* Адаптации за по-големи екрани (над 768px) */
+@media (min-width: 768px) {
+     .partner-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+     }
+}
+
+/* Адаптации само за мобилни екрани (под 768px) */
+@media (max-width: 768px) {
+    /* Покажи плаващите бутони */
+    .floating-buttons {
+        display: flex; /* Показва плаващите бутони само на мобилни */
+    }
+
+    /* Стилизация на бутоните ВЪТРЕ в плаващия контейнер на мобилни */
+    .floating-buttons .contact-button {
+        padding: 8px 18px;
+        background-color: #b30000; /* Червен цвят */
+        color: white;
+        text-decoration: none;
+        border-radius: 30px; /* Закръглени бутони */
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        /* transition property is already in the general .contact-button rule */
+    }
+
+    .floating-buttons .contact-button:hover {
+        background-color: #1bb300; /* Зелен цвят при ховър */
+    }
+
+    /* Общи адаптации за мобилни екрани под 768px */
+    body {
+        padding: 0 10px; /* Добавяме малко страничен padding */
+        font-size: 16px;
+    }
+
+    header img.logo-center {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .partner-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колони на мобилни */
+        gap: 10px;
+    }
+
+    /* Бутоните в секция "Контакти" се подреждат в колона на мобилни */
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Увеличаваме размера и padding-а на бутоните в секция "Контакти" на мобилни */
+    .contact-buttons .contact-button {
+        width: 90%; /* Заемат почти цялата ширина */
+        margin: 10px 0; /* Добавяме вертикален маржин между тях */
+        font-size: 1.1em;
+        padding: 1em;
+    }
+
+    section {
+        margin-bottom: 2em;
+        padding: 30px 15px; /* Леко намаляваме padding-а на секциите на мобилни */
+    }
+
+    footer {
+        font-size: 0.9em;
+        padding: 1em;
+    }
+}
+
+/* Адаптации за много малки екрани (под 480px) */
+@media (max-width: 480px) {
+  .partner-grid {
+    grid-template-columns: 1fr; /* 1 колона на много малки екрани */
+  }
+   /* Увеличаваме малко страничния padding на body за по-малки екрани */
+   body {
+       padding: 0 5px;
+   }
+   /* Намаляваме малко padding-а на секциите */
+   section {
+       padding: 20px 10px;
+   }
+   /* Намаляваме малко gap-а при плаващите бутони */
+   .floating-buttons {
+       gap: 10px;
+   }
+}
