@@ -281,3 +281,17 @@ footer {
     section { padding: 16px 4px; }
     .floating-buttons { gap: 10px; }
 }
+/* Стилове за премахване на белия контейнер около логото */
+.header-container {
+    background: linear-gradient(to right, #0052cc, #00c6ff); /* Цветен градиент */
+    padding: 20px; /* Пространство около логото */
+    text-align: center; /* Центрира логото в контейнера */
+}
+
+.logo-center {
+    display: inline-block;
+    max-width: 300px; /* Максимална ширина на логото */
+    height: auto; /* Поддържа пропорциите на логото */
+    background-color: transparent; /* Уверява, че фонът е прозрачен */
+    border: none; /* Премахва граници, ако има такива */
+}
