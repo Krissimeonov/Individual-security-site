@@ -406,3 +406,32 @@ footer {
 
     animation: spinZoom3D 3s ease-out forwards; /* Анимация с 3D ефект, която спира в правилна ориентация */
 }
+/* Дефиниране на анимацията с 3D ефект */
+@keyframes spinZoom3D {
+    0% {
+        opacity: 0; /* Пълна прозрачност */
+        transform: scale(0.5) rotateY(0deg) translateZ(-100px); /* Намалено, без завъртане, отдалечено назад */
+    }
+    50% {
+        opacity: 0.7; /* Полупрозрачност */
+        transform: scale(1.2) rotateY(90deg) translateZ(0); /* Леко увеличено и завъртано на 90 градуса */
+    }
+    100% {
+        opacity: 1; /* Пълна видимост */
+        transform: scale(1.5) rotateY(0deg) translateZ(0); /* По-голямо с правилна ориентация */
+    }
+}
+
+/* Стил за логото */
+.logo-center {
+    display: block;
+    margin: 0 auto; /* Центриране хоризонтално */
+    max-width: 500px; /* Увеличен размер */
+    height: auto;
+
+    /* Добавяне на 3D перспектива за логото */
+    transform-style: preserve-3d;
+    perspective: 1000px; /* Задава перспектива за 3D ефект */
+
+    animation: spinZoom3D 3s ease-out forwards; /* Анимация с 3D ефект, която спира в крайната позиция */
+}
