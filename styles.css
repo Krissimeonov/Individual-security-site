@@ -26,13 +26,10 @@ body {
 }
 
 header {
-    background-color: transparent; /* Премахва фона */
-    border: none; /* Без граници */
-    padding: 0; /* Без вътрешни отстояния */
-    margin: 0; /* Без външни отстояния */
-    text-align: center; /* Центрира логото хоризонтално */
+    text-align: center;
+    padding: 32px 0 20px 0;
+    background: linear-gradient(90deg, var(--accent-main) 20%, var(--accent-alt) 100%);
 }
-
 .logo-center {
     display: inline-block;
     max-width: 200px; /* Задава максимална ширина, ако е нужно */
