@@ -434,7 +434,4 @@ footer {
     perspective: 1000px; /* Задава перспектива за 3D ефект */
 
     animation: spinZoom3D 3s ease-out forwards; /* Анимация с 3D ефект, която спира в крайната позиция */
-}
-body > * {
-    animation: fadeIn 2s ease-out;
-}
+
