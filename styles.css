@@ -295,3 +295,32 @@ footer {
     background-color: transparent; /* Уверява, че фонът е прозрачен */
     border: none; /* Премахва граници, ако има такива */
 }
+/* Дефиниране на комбинираната анимация */
+@keyframes combinedAnimation {
+    0% {
+        opacity: 0; /* Пълна прозрачност */
+        transform: scale(0.5) rotate(0deg); /* Намалено и без завъртане */
+    }
+    50% {
+        opacity: 0.5; /* Полупрозрачно */
+        transform: scale(1.2) rotate(180deg); /* Леко увеличено и завъртяно на 180 градуса */
+    }
+    100% {
+        opacity: 1; /* Пълна видимост */
+        transform: scale(1) rotate(360deg); /* Оригинален размер и завъртане на 360 градуса */
+    }
+}
+
+/* Прилагане на комбинираната анимация към логото */
+.logo-center {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px; /* Максимална ширина */
+    height: auto;
+
+    animation: combinedAnimation 3s ease-in-out infinite; /* 3 секунди, плавна анимация, която се повтаря */
+}
+.logo-center:hover {
+    animation: pulse 1.5s ease-in-out;
+    transform: scale(1.2); /* Увеличава логото при ховър */
+}
