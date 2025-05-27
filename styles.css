@@ -324,3 +324,27 @@ footer {
     animation: pulse 1.5s ease-in-out;
     transform: scale(1.2); /* Увеличава логото при ховър */
 }
+/* Дефиниране на анимацията */
+@keyframes spinZoomCenter {
+    0% {
+        opacity: 0; /* Пълна прозрачност */
+        transform: scale(0.5) rotate(0deg) translateY(-50px); /* Намалено, без завъртане, изместено нагоре */
+    }
+    50% {
+        opacity: 0.5; /* Полупрозрачност */
+        transform: scale(1.2) rotate(180deg) translateY(0); /* Леко увеличено и завъртано на 180 градуса */
+    }
+    100% {
+        opacity: 1; /* Пълна видимост */
+        transform: scale(1) rotate(360deg) translateY(0); /* Оригинален размер, завъртане на 360 градуса */
+    }
+}
+
+/* Стил за логото */
+.logo-center {
+    display: block;
+    margin: 0 auto; /* Центриране хоризонтално */
+    max-width: 300px; /* Максимална ширина */
+    height: auto;
+    animation: spinZoomCenter 3s ease-out forwards; /* 3 секунди, плавна анимация, която спира в крайната позиция */
+}
