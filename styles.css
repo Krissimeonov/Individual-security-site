@@ -332,11 +332,11 @@ footer {
     }
     50% {
         opacity: 0.5; /* Полупрозрачност */
-        transform: scale(1.2) rotate(90deg) translateY(0); /* Леко увеличено и завъртано на 180 градуса */
+        transform: scale(1.2) rotate(180deg) translateY(0); /* Леко увеличено и завъртано на 180 градуса */
     }
     100% {
         opacity: 1; /* Пълна видимост */
-        transform: scale(1) rotate(180deg) translateY(0); /* Оригинален размер, завъртане на 360 градуса */
+        transform: scale(1) rotate(360deg) translateY(0); /* Оригинален размер, завъртане на 360 градуса */
     }
 }
 
