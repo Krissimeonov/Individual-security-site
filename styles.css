@@ -435,3 +435,13 @@ footer {
 
     animation: spinZoom3D 3s ease-out forwards; /* Анимация с 3D ефект, която спира в крайната позиция */
 
+/* Стил за основното заглавие */
+h1, .main-title {
+    font-family: 'Arial', sans-serif; /* Използвай шрифта на останалите заглавия */
+    font-size: 2rem; /* Увеличи размера, ако е нужно */
+    font-weight: bold; /* Увери се, че текстът е удебелен */
+    color: #2A7BDE; /* Синият цвят на другите заглавия */
+    text-align: center; /* Подравняване в центъра */
+    margin-top: 20px; /* Добави отстояние отгоре */
+    margin-bottom: 20px; /* Добави отстояние отдолу */
+}
